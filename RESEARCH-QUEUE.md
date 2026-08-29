@@ -20,9 +20,8 @@ Când un studio de aici intră în `DATA` (`index.html`), se șterge din aceast�
 - [ ] Prographic Architecture Studio
 - [ ] Centerpoint
 - [ ] OM Birou de Arhitectură
-- [ ] Blipsz + Atelier FKM
+- [ ] Blipsz (Atelier FKM a intrat în registru prin Palatul Vulturul Negru)
 - [ ] Corina Dîndăreanu
-- [ ] Filofi și Trandafir Arhitectură
 - [ ] Outline Architecture Office
 - [ ] Format Architecture & Design
 - [ ] Kub Planning
