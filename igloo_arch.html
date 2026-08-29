@@ -330,10 +330,10 @@
       <div>
         <h4>Metodologie</h4>
         <ul>
-          <li>40 pagini din categoria Arhitectură parcurse integral la nivel de titlu (pag. 1–40 din 171)</li>
-          <li>~95 articole deschise integral pentru extragerea creditelor de arhitectură</li>
-          <li>Cazuri semnalate ca „neclare" și excluse din listă: interviuri/profiluri fără proiect construit cu adresă (ex: Atelier TERRApia; interviu Ilinca Păun Constantinescu, pag. 40) și dosarele tematice igloo (ex: „Dosar #210 — Pe Topolog, în sus", cercetare de arhitectură vernaculară fără birou comercial)</li>
-          <li>Din pagina 21 înainte: articolele clar internaționale (nume de țară/oraș străin în titlu) au fost sărite fără a fi deschise, pentru optimizare — la cererea explicită a utilizatorului</li>
+          <li>45 pagini din categoria Arhitectură parcurse integral la nivel de titlu (pag. 1–45 din 171)</li>
+          <li>~110 articole deschise integral pentru extragerea creditelor de arhitectură</li>
+          <li>Cazuri semnalate ca „neclare" și excluse din listă: interviuri/profiluri fără proiect construit cu adresă (ex: Atelier TERRApia; interviuri Ilinca Păun Constantinescu, Adrian Phiffer, Oana Stănescu; studiourile de vizualizare arhitecturală bucharest.studio și Panoptikon) și dosarele tematice igloo (ex: „Dosar #210 — Pe Topolog, în sus")</li>
+          <li>Din pagina 21 înainte: articolele clar internaționale (nume de țară/oraș străin în titlu) au fost sărite fără a fi deschise, pentru optimizare — la cererea explicită a utilizatorului. Pagina 44 a fost integral internațională.</li>
           <li>Verificare directă în Tabloul Teritorial București al OAR (oar-bucuresti.ro/tabloul) pentru arhitecții români nominalizați — pe litere A, B, C, D, K, L, M, N, P, R, S, Ș, W</li>
           <li>Date de firmă căutate pe termene.ro / listafirme.eu — confirmate cu CUI doar unde denumirea a permis identificare certă</li>
         </ul>
@@ -872,11 +872,11 @@ const DATA = [
     country:'ro', flag:'🇷🇴', location:'București', website:'https://www.melon.ro/',
     founded:null, foundedNote:'necunoscută — de verificat',
     architects:[
-      {name:'George Postelnicu', tna:null, verified:null},
-      {name:'Oana Postelnicu', tna:null, verified:null}
+      {name:'George Postelnicu', tna:'1508', verified:true},
+      {name:'Oana Gabriela Postelnicu', tna:'1507', verified:true}
     ],
     services:['Arhitectură'], projectTypes:['Locuințe colective boutique'],
-    notable:['Imobil Turbinei 25-27, cartier Floreasca, București (2023) — 7 apartamente cu vedere spre Velodromul Dinamo'],
+    notable:['Imobil Turbinei 25-27, cartier Floreasca, București (2023) — 7 apartamente cu vedere spre Velodromul Dinamo','Porumbaru 68, București (2021) — 10 apartamente, terase ample, dialog vegetal–mineral; structură Popp și Asociații'],
     financial:'Neverificat.', reviews:'Neverificat.',
     blurb:'Birou de familie (George + Oana Postelnicu) — imobile rezidențiale mici, integrate sensibil în țesutul istoric al Floreasca.',
     sourceTitle:'Stop-cadru pe orașul-palimpsest: imobil lângă Velodrom',
@@ -1207,10 +1207,10 @@ const DATA = [
       {name:'Șerban Țigănaș', tna:null, verified:null, note:'fost președinte al Ordinului Arhitecților din România (2010–2018) · probabil filiala Transilvania'},
       {name:'Levente Kornis', tna:null, verified:null, note:'șef de proiect'}
     ],
-    services:['Arhitectură','Arhitectură peisageră'], projectTypes:['Sport/loisir (stadion)','Clădiri publice'],
-    notable:['Stadionul Național de Rugby „Arcul de Triumf", bd. Mărăști 18–20, București (2020) — capacitate 8 155 locuri, cu hotel, spații media, muzeu și parcare subterană integrate; Premiul BNA 2021 (clădiri pentru sport/loisir, ex aequo)'],
+    services:['Arhitectură','Arhitectură peisageră'], projectTypes:['Sport/loisir (stadioane)','Clădiri publice'],
+    notable:['Stadionul Național de Rugby „Arcul de Triumf", bd. Mărăști 18–20, București (2020) — capacitate 8 155 locuri, cu hotel, spații media, muzeu și parcare subterană integrate; Premiul BNA 2021 (clădiri pentru sport/loisir, ex aequo)','Cluj Arena, Aleea Stadionului 2, Cluj-Napoca (2011) — stadion UEFA Elite, copertine curbe parametrice orientate spre meandrul Someșului; nominalizare Mies van der Rohe 2013, Premiul Președintelui UAR 2012, Architizer A+ 2013','Stadionul „Ion Oblemenco", bd. Știrbei Vodă 36, Craiova (2018) — arenă eliptică de 30 000 locuri; Premiul AGIR 2018, nominalizare Mies van der Rohe 2019'],
     financial:'Neverificat.', reviews:'Neverificat.',
-    blurb:'Birou consacrat cu sedii la Cluj-Napoca și Timișoara — Șerban Țigănaș a fost președinte al OAR. Portofoliu de clădiri publice și sportive de mare anvergură.',
+    blurb:'Birou consacrat cu sedii la Cluj-Napoca și Timișoara — Șerban Țigănaș a fost președinte al OAR (2010–2018). Autor al celor mai importante stadioane de design din România.',
     sourceTitle:'Stadionul Național de Rugby „Arcul de Triumf"',
     sourceUrl:'https://igloo.ro/stadionul-national-de-rugby-arcul-de-triumf/'
   },
@@ -1228,6 +1228,116 @@ const DATA = [
     blurb:'Birou bucureștean de arhitectură și inginerie — proiecte mari de regenerare urbană pe foste platforme industriale (dezvoltator One United Properties).',
     sourceTitle:'Un catalizator al transformării urbane. One Cotroceni Park',
     sourceUrl:'https://igloo.ro/un-catalizator-al-transformarii-urbane-one-cotroceni-park/'
+  },
+
+  {
+    id:'larix-studio', name:'Larix Studio', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Gheorgheni, jud. Harghita', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Köllő Miklós', tna:null, verified:null, note:'probabil OAR filiala Harghita — netestat'},
+      {name:'Györfy László-Miklós', tna:null, verified:null},
+      {name:'Gál Zoltán', tna:null, verified:null}
+    ],
+    services:['Arhitectură','Restaurare/reabilitare patrimoniu rural'], projectTypes:['Educațional (grădiniță)','Restaurare patrimoniu vernacular','Reconversie culturală'],
+    notable:['Grădinița Pitypang, Gheorgheni, jud. Harghita (2021) — reabilitare + extindere cu structuri de oțel placate cu lemn','Restaurarea morii de apă din satul Senetea, com. Suseni, jud. Harghita (2021) — demontare și reconstrucție atentă, reconversie în spațiu cultural și colecție etnografică'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou din Gheorgheni (Harghita) specializat în intervenții discrete în context rural secuiesc — grădinițe, restaurări de patrimoniu vernacular.',
+    sourceTitle:'O structură modernă discretă. Grădinița Pitypang, Gheorgheni',
+    sourceUrl:'https://igloo.ro/o-structura-moderna-discreta-gradinita-pitypang-gheorgheni/'
+  },
+  {
+    id:'dpda-studio', name:'DPDA Studio', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'jud. Harghita', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Dénes Péter', tna:null, verified:null, note:'probabil OAR filiala Harghita — netestat'},
+      {name:'Lázár Orsolya', tna:null, verified:null},
+      {name:'Szász Bertalan Eszter', tna:null, verified:null}
+    ],
+    services:['Arhitectură','Reabilitare patrimoniu vernacular'], projectTypes:['Reabilitare + extindere casă tradițională'],
+    notable:['Reabilitarea și extinderea unei case tradiționale secuiești, satul Gârciu, com. Racu, jud. Harghita (2020) — materiale de epocă pentru casa veche, volum contemporan minimalist în locul bucătăriei de vară'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou din Harghita specializat în reabilitarea caselor tradiționale secuiești, cu dialog între vechi și intervenție contemporană sobră.',
+    sourceTitle:'Reabilitarea și extinderea unei case tradiționale secuiești din satul Gârciu, comuna Racu, jud. Harghita',
+    sourceUrl:'https://igloo.ro/reabilitarea-si-extinderea-unei-case-traditionale-secuiesti-din-satul-garciu-comuna-racu-jud-harghita/'
+  },
+  {
+    id:'polarh-design', name:'Polarh Design', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Virgiliu Polizu', tna:'10909', verified:false, note:'drept de semnătură suspendat pentru neplata cotizației (la data verificării)'},
+      {name:'Ruxandra Căpățână', tna:'6738', verified:true},
+      {name:'Mircea Căpățână', tna:'7105', verified:true}
+    ],
+    services:['Arhitectură','Restaurare monumente istorice'], projectTypes:['Restaurare biserică medievală'],
+    notable:['Restaurarea Bisericii Domnești „Sf. Nicolae" din Rădăuți, str. Bogdan Vodă 6, jud. Suceava (2020) — biserică sec. XIV cu elemente gotice și frescă bizantină; recuperarea picturii medievale, consolidare seismică, climatizare geotermală. Restaurare frescă: CERECS ART / prof. Oliviu Boldura'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean de restaurare de monumente istorice — proiectant pentru unul dintre cele mai vechi lăcașuri de cult din Moldova.',
+    sourceTitle:'Restaurarea bisericii domnești din Rădăuți',
+    sourceUrl:'https://igloo.ro/biserica-domneasca-din-radauti/'
+  },
+  {
+    id:'calujac-arch', name:'Calujac Architecture', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Maxim Calujac', tna:null, verified:null, note:'nu apare în tabloul OAR București — posibil altă filială / format în străinătate; de reconfirmat'},
+      {name:'Simona Cristescu', tna:'8488', verified:true}
+    ],
+    services:['Arhitectură'], projectTypes:['Locuințe colective (ansamblu)'],
+    notable:['Loft Green Apartments, șos. București-Târgoviște 219, Mogoșoaia, jud. Ilfov (2019) — 3 corpuri P+4 în formă de romb, amplasate liber în pădure; nominalizare Premiul Mies van der Rohe 2022'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean — ansamblu rezidențial nominalizat la Premiul Mies van der Rohe 2022, cu accent pe legătura cu natura.',
+    sourceTitle:'Loft Green Apartments. Despre sustenabilitate și favorizarea esteticului',
+    sourceUrl:'https://igloo.ro/loft-green-apartments-sustenabil-si-estetic/'
+  },
+  {
+    id:'studio-arca', name:'Studio Arca', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Timișoara', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[{name:'(nespecificat nominal în acest articol)', tna:null, verified:null}],
+    services:['Arhitectură'], projectTypes:['Locuințe colective'],
+    notable:['Essenza Residence, str. Mangalia 66–72, cartier Iosefin, Timișoara (2021) — două volume suprapuse: bază din cărămidă roșie în acord cu contextul, volum alb superior cu geometrie modernă și curți semi-publice'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou din Timișoara — locuințe colective care suprapun limbajul istoric (cărămidă) cu volumetria contemporană, în cartierul protejat Iosefin.',
+    sourceTitle:'O suprapunere de epoci și influențe. Essenza Residence',
+    sourceUrl:'https://igloo.ro/o-suprapunere-de-epoci-si-influente-essenza-residence/'
+  },
+  {
+    id:'fabrica-arhitectura', name:'Fabrica de Arhitectură', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Daniel Popescu', tna:null, verified:null, note:'nu a fost regăsit în tabloul OAR București la această verificare — de reconfirmat'},
+      {name:'Irina Stinghe', tna:'7107', verified:true},
+      {name:'Adela Voinea', tna:null, verified:null},
+      {name:'Ștefan Căplescu', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Renovare + extindere locuință'],
+    notable:['Casa M, str. Erou Iancu Nicolae, Voluntari, jud. Ilfov (2020) — renovarea unei case de la începutul anilor 2000, reorganizare spațială, paletă lemn/metal/cărămidă/beton'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean — apărea în lista de verificat din albumele igloobest, acum confirmat printr-un proiect de renovare rezidențială.',
+    sourceTitle:'Casa M – limite volatile între vechi și nou',
+    sourceUrl:'https://igloo.ro/casa-m-limite-volatile-intre-vechi-si-nou/'
+  },
+  {
+    id:'studio-act', name:'Studio Act', subtitle:'studioact',
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Horia Spirescu', tna:'9097', verified:true},
+      {name:'Adrian Spirescu', tna:'1164', verified:true},
+      {name:'Vlad Iosif', tna:null, verified:null},
+      {name:'Victor Șerbănescu', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Rezidențial'],
+    notable:['Casa Avrămeni, str. Avrămeni, București (2022) — locuință la periferie, „o suită de camere, interioare și exterioare", onestitate structurală, integrare ecologică'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean de familie (Adrian și Horia Spirescu) — case contemporane cu expresie structurală onestă.',
+    sourceTitle:'O casă la marginea orașului. Casa Avrămeni',
+    sourceUrl:'https://igloo.ro/o-casa-la-marginea-orasului-casa-avrameni/'
   },
 
   /* ---------- international (no OAR relevance) ---------- */
@@ -1275,8 +1385,8 @@ const DATA = [
     website:'https://www.gmp.de/en/', founded:null,
     architects:[{name:'Meinhard von Gerkan, Stephan Schütz ș.a.', tna:null, verified:null}],
     services:['Arhitectură','Arhitectură peisageră'], projectTypes:['Muzeu / cultural'],
-    notable:['Muzeul Național al Fluviului Galben — Zhengzhou, China (2025): 100 300 mp, acoperiș verde care urmează cursul fluviului'],
-    blurb:'Birou german de renume internațional — proiect monumental câștigat printr-o competiție internațională din 2020.',
+    notable:['Muzeul Național al Fluviului Galben — Zhengzhou, China (2025): 100 300 mp, acoperiș verde care urmează cursul fluviului','Arena Națională, bd. Basarabia 37–39, București (2011) — concept Volkwin Marg & Christian Hoffmann; în colaborare cu UAUIM–C.C.P.E.C. și Graphic Studio'],
+    blurb:'Birou german de renume internațional — proiect monumental câștigat printr-o competiție internațională din 2020. Autor și al Arenei Naționale din București.',
     sourceTitle:'Monumental și simbolic. Muzeul Național al Fluviului Galben, Zhengzhou, China',
     sourceUrl:'https://igloo.ro/monumental-si-simbolic-muzeul-national-al-fluviului-galben-zhengzhou-china/'
   },
@@ -1307,10 +1417,10 @@ const BONUS = [
  "Theo Stancu","RUAA","Bogdan Demetrescu","Graphic Studio",
  "Florian Stanciu","Mădălin Ghigeanu","Daniel Ciocăzanu","Tecon",
  "NBC Arhitect","Arxtudio","DE3 Grup","Prographic Architecture Studio",
- "SYAA","Centerpoint","OM Birou de Arhitectură","Attila Kim Architects",
- "Blipsz + Atelier FKM","Corina Dîndăreanu","Filofi și Trandafir Arhitectură","Prodid","SMAA",
- "DAAA (Dron And Ardelean Architects)","Outline Architecture Office","Fabrica de Arhitectură",
- "Format Architecture & Design","Parasite Studio","Kub Planning","Melon Design Studio",
+ "SYAA","Centerpoint","OM Birou de Arhitectură",
+ "Blipsz + Atelier FKM","Corina Dîndăreanu","Filofi și Trandafir Arhitectură","Prodid",
+ "Outline Architecture Office",
+ "Format Architecture & Design","Parasite Studio","Kub Planning",
  "Inegal Design","TIN.archi","planwerk (Cluj-Napoca)",
  "MKBT (urbanism social)","Andreea Marinescu Arhitectură"
 ];
@@ -1386,10 +1496,10 @@ function renderStats(){
     {n: ro.length, l:'Studiouri românești'},
     {n: verifiedArch, l:'Arhitecți verificați OAR'},
     {n: BONUS.length, l:'În lista de verificat'},
-    {n: 40, l:'Pagini categorie parcurse / 171'},
+    {n: 45, l:'Pagini categorie parcurse / 171'},
   ];
   document.getElementById('statsbar').innerHTML = stats.map(s=>`<div class="stat"><b>${s.n}</b><span>${s.l}</span></div>`).join('');
-  document.getElementById('pagecount').textContent = '01–40 / 171';
+  document.getElementById('pagecount').textContent = '01–45 / 171';
 }
 
 function renderGrid(filter='all', query=''){
