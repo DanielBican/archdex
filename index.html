@@ -145,6 +145,37 @@
   }
   .chip.active, .chip:hover{background:var(--ink);color:var(--cream);}
 
+  .citybar{
+    max-width:1180px;
+    margin:0 auto;
+    padding:.9rem 1.5rem 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:.45rem;
+    align-items:center;
+  }
+  .citybar .cchip-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.68rem;
+    text-transform:uppercase;
+    letter-spacing:.09em;
+    color:var(--ink-soft);
+    margin-right:.15rem;
+  }
+  .cchip{
+    padding:.3rem .75rem;
+    border:1px solid var(--line);
+    background:transparent;
+    border-radius:999px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.75rem;
+    cursor:pointer;
+    color:var(--ink-soft);
+    transition:.15s;
+  }
+  .cchip:hover, .cchip.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+  .cchip .n{opacity:.55;}
+
   /* ---------- Grid ---------- */
   main{max-width:1180px;margin:0 auto;padding:1.6rem 1.5rem 4rem;}
   .section-label{
@@ -293,6 +324,8 @@
   <button class="chip" data-filter="verified">✓ Verificate OAR</button>
 </div>
 
+<div class="citybar" id="citybar"></div>
+
 <main>
   <div class="section-label"><span id="grid-label">Studiouri</span><span id="grid-count"></span></div>
   <div class="grid" id="grid"></div>
@@ -301,16 +334,8 @@
 
 <footer>
   <div class="inner">
-    <p>Registru construit manual din <a href="https://igloo.ro/category/arhitectura/">categoria Arhitectură a revistei igloo.ro</a>, cu verificarea dreptului de semnătură în <a href="https://www.oar-bucuresti.ro/tabloul/">Tabloul Teritorial București al OAR</a>. Pagini parcurse: 1–60 din 171.</p>
     <div class="fine">
-      Metodologie completă, limitări și excluderi:
-      <a href="https://github.com/DanielBican/archdex/blob/main/METHODOLOGY.md">METHODOLOGY.md</a> ·
-      studiouri de verificat în continuare:
-      <a href="https://github.com/DanielBican/archdex/blob/main/RESEARCH-QUEUE.md">RESEARCH-QUEUE.md</a> ·
-      cod sursă:
-      <a href="https://github.com/DanielBican/archdex">github.com/DanielBican/archdex</a>
-      <br><br>
-      Compilat din igloo.ro (articole citate în fiecare fișă) · oar-bucuresti.ro/tabloul · termene.ro / listafirme.eu · anuala.ro · site-urile proprii ale studiourilor. Document de cercetare personală — nu constituie recomandare profesională sau juridică.
+      Registru construit manual din categoria Arhitectură a revistei igloo.ro, cu verificarea dreptului de semnătură în Tabloul Teritorial București al OAR. Compilat din igloo.ro (articole citate în fiecare fișă) · oar-bucuresti.ro/tabloul · termene.ro / listafirme.eu · anuala.ro · site-urile proprii ale studiourilor. Document de cercetare personală — nu constituie recomandare profesională sau juridică.
     </div>
   </div>
 </footer>
@@ -397,11 +422,13 @@ const DATA = [
       {name:'Adrian Untaru', tna:null, verified:null, note:'partener fondator ADNBA'},
       {name:'Bogdan Brădățeanu', tna:null, verified:null, note:'partener fondator ADNBA'},
       {name:'Carmen Petrea', tna:null, verified:null},
-      {name:'Mihaela Dobre', tna:null, verified:null}
+      {name:'Mihaela Dobre', tna:null, verified:null},
+      {name:'Petra Bodea', tna:null, verified:null},
+      {name:'Mihail Filipenco', tna:null, verified:null}
     ],
     services:['Arhitectură', 'Masterplanning / ansambluri rezidențiale','Urbanism'],
-    projectTypes:['Ansambluri rezidențiale la scară mare','Locuințe','Clădiri de birouri','Masterplan reconversie industrială'],
-    notable:['Avalon Estate — Voluntari/Pipera, jud. Ilfov: ansamblu de 8 ha, case + townhouse-uri + colective (2024)','CityZen — masterplan pe Calea Griviței, București (în dezvoltare) — reconversia unei foste platforme industriale, cu dezvoltatorul Speedwell și urbanista Paola Viganò (Studio Bernardo Secchi – Paola Viganò)','Dragoș Vodă 17 / „Galben la pătrat", sector 2, București (2019) — imobil P+3, 4 apartamente duplex, accente galbene în cheie modernistă interbelică; nominalizări BNA 2020 și Premiul Mies van der Rohe 2022','Matei Millo Offices, str. Matei Millo 6, București (2021) — concept & supervizare (execuție DECO Architects); ritm vertical inspirat Art Deco, plază publică nouă; Premiul I ex aequo la Bienala Națională de Arhitectură 2021','U Center Offices, Calea Șerban Vodă 206–218, București (2021) — asociat de concept alături de Chapman Taylor (lead), DECO Architects și Bogart; LEED Platinum','Profil de arhitect prezentat în igloo 223','Apare și în albumul „Case din România 4” (Casa Octavian)'],
+    projectTypes:['Ansambluri rezidențiale la scară mare','Locuințe colective','Clădiri de birouri','Masterplan reconversie industrială'],
+    notable:['Avalon Estate — Voluntari/Pipera, jud. Ilfov: ansamblu de 8 ha, case + townhouse-uri + colective (2024)','CityZen — masterplan pe Calea Griviței, București (în dezvoltare) — reconversia unei foste platforme industriale, cu dezvoltatorul Speedwell și urbanista Paola Viganò (Studio Bernardo Secchi – Paola Viganò)','Mumuleanu 14 / Urban Spaces 2, str. Barbu Mumuleanu 14, București (2019) — locuire colectivă, 20 de apartamente majoritar duplex; Premiul BNA 2020 (arhitectura locuinței colective) + „Cel mai bun dezvoltator 2020"; nominalizare Mies van der Rohe 2022','Dragoș Vodă 17 / „Galben la pătrat", sector 2, București (2019) — imobil P+3, 4 apartamente duplex, accente galbene în cheie modernistă interbelică; nominalizări BNA 2020 și Premiul Mies van der Rohe 2022','Matei Millo Offices, str. Matei Millo 6, București (2021) — concept & supervizare (execuție DECO Architects); ritm vertical inspirat Art Deco, plază publică nouă; Premiul I ex aequo la Bienala Națională de Arhitectură 2021','U Center Offices, Calea Șerban Vodă 206–218, București (2021) — asociat de concept alături de Chapman Taylor (lead), DECO Architects și Bogart; LEED Platinum','Profil de arhitect prezentat în igloo 223','Apare și în albumul „Case din România 4” (Casa Octavian)'],
     financial:'Neverificat.',
     reviews:'Neverificat.',
     blurb:'Birou din București specializat pe ansambluri rezidențiale mari, cu accent pe „garden living” și diversitate tipologică.',
@@ -410,7 +437,7 @@ const DATA = [
   },
   {
     id:'studio1408', name:'Studio 1408', subtitle:null,
-    country:'ro', flag:'🇷🇴', location:'România', website:null,
+    country:'ro', flag:'🇷🇴', location:'România (de precizat orașul)', website:null,
     founded:null, foundedNote:'necunoscută — de verificat',
     architects:[
       {name:'Diana-Nicoleta Bugnariu', tna:'7477', verified:true},
@@ -420,7 +447,7 @@ const DATA = [
     ],
     services:['Arhitectură'],
     projectTypes:['Rezidențial (NZEB)'],
-    notable:['Casa R — Ilfov (2024), standard NZEB','Casa „Transparent și opac", Dumbrava Vlăsiei, Balotești, jud. Ilfov (2020) — locuință pe două niveluri, jocul plin–gol cu materiale naturale și sticlă generoasă; proiect câștigător la categoria Locuință individuală, Bienala Națională de Arhitectură 2021','Apare de două ori în albumele igloobest: „Case din România 6” și „Case din România 9”'],
+    notable:['Casa R — Ilfov (2024), standard NZEB','Casa „Transparent și opac", Dumbrava Vlăsiei, Balotești, jud. Ilfov (2020) — locuință pe două niveluri, jocul plin–gol cu materiale naturale și sticlă generoasă; proiect câștigător la categoria Locuință individuală, Bienala Națională de Arhitectură 2021','Casa 1408, Dumbrava Vlăsiei, jud. Ilfov (2020) — arhitectură organică pe două niveluri, placare cu cărămidă, relații plin–gol','Apare de două ori în albumele igloobest: „Case din România 6” și „Case din România 9”'],
     financial:'Neverificat.',
     reviews:'Neverificat.',
     blurb:'Studio recurent în publicațiile igloo — reinterpretări contemporane ale arhetipului casei tradiționale, orientat spre eficiență energetică (NZEB).',
@@ -586,7 +613,7 @@ const DATA = [
       {name:'Andrei Butușină', tna:null, verified:null}
     ],
     services:['Arhitectură','Design interior'], projectTypes:['Reabilitare patrimoniu interbelic','Hotelier','Rezidențial'],
-    notable:['Casa I, București (2019–2025) — reabilitare casă stil florentin-maur interbelic; Premiul Anuala de Arhitectură București 2025 (amenajări rezidențiale) + nominalizare (arhitectura locuinței individuale)','The Marmorosch Bucharest – Autograph Collection, str. Doamnei 2, București (2021) — reconversia fostei Bănci Marmorosch Blank (1912) în hotel de 5 stele; autor principal Adrian Soare','BC13 — imobil de locuințe, str. Badea Cârțan 13, sector 2, București (2020) — cărămidă aparentă, elemente metalice, curți interioare; autori Eliza Yokina + Adrian Soare'],
+    notable:['Casa I, București (2019–2025) — reabilitare casă stil florentin-maur interbelic; Premiul Anuala de Arhitectură București 2025 (amenajări rezidențiale) + nominalizare (arhitectura locuinței individuale)','The Marmorosch Bucharest – Autograph Collection, str. Doamnei 2, București (2021) — reconversia fostei Bănci Marmorosch Blank (1912) în hotel de 5 stele; autor principal Adrian Soare','BC13 — imobil de locuințe, str. Badea Cârțan 13, sector 2, București (2020) — cărămidă aparentă, elemente metalice, curți interioare; autori Eliza Yokina + Adrian Soare','Moxy Bucharest Downtown, str. Doamnei 17–19, București (2020) — reconversia unei clădiri de birouri anii 1960 în hotel Moxy; design interior industrial-chic, coordonare Eliza Yokina'],
     financial:'Neverificat.', reviews:'Neverificat.',
     blurb:'Unul dintre cele mai mari birouri de arhitectură din București (~40 de arhitecți), format prin fuziunea PZP + SYAA + ARXTUDIO — portofoliu de la reabilitare de patrimoniu la hoteluri mari.',
     sourceTitle:'Casa I: pitoresc mediteraneean în cheie contemporană',
@@ -605,7 +632,7 @@ const DATA = [
       {name:'Silviu Ciulei', tna:null, verified:null}
     ],
     services:['Arhitectură','Design interior'], projectTypes:['Cramă/turism viticol','Hotel & spa','Rezidențial','Locuințe colective mixed-use'],
-    notable:['Crama Domeniile Mitroi, Valul lui Traian, jud. Constanța (2025) — consolă de 13m, una dintre cele mai mari din România','Unirii 19B, Constanța (2020) — imobil rezidențial mixed-use în trepte, care coboară gradual în înălțime spre vecinătăți','Fondatorul a semnat prefața albumului „Case din România 9"'],
+    notable:['Crama Domeniile Mitroi, Valul lui Traian, jud. Constanța (2025) — consolă de 13m, una dintre cele mai mari din România','Unirii 19B, Constanța (2020) — imobil rezidențial mixed-use în trepte, care coboară gradual în înălțime spre vecinătăți','Vila Ducu, str. M10, Mamaia Sat, Năvodari, jud. Constanța (2020) — vilă turistică / mini-hotel de 15 camere, principii bioclimatice (orientare, masă termică, umbrire)','Fondatorul a semnat prefața albumului „Case din România 9"'],
     financial:'Neverificat.',
     reviews:'✅ Pagină Facebook „Igloo Architecture" — ~1 983 aprecieri, 100% recomandă din 12 recenzii.',
     blurb:'Birou bucureștean full-service (arhitectură + interior), cu portofoliu ce include hoteluri, crame și proiecte rezidențiale mari. Notă: nume similar cu revista igloo, dar companie distinctă.',
@@ -734,8 +761,8 @@ const DATA = [
       {name:'Márk Lóránt Mihat', tna:null, verified:null},
       {name:'Maria Margareta Mihat', tna:null, verified:null}
     ],
-    services:['Arhitectură','Regenerare urbană','Amenajare peisageră'], projectTypes:['Spații publice / regenerare urbană comunitară'],
-    notable:['Grădina Drăgaica, Buzău (2023) — regenerare urbană participativă, nominalizare Anuala de Arhitectură','Inițiative anterioare: Grădini Deschise, Bucureștiul nefolosit'],
+    services:['Arhitectură','Regenerare urbană','Amenajare peisageră'], projectTypes:['Spații publice / regenerare urbană comunitară','Reconversie hală industrială'],
+    notable:['Grădina Drăgaica, Buzău (2023) — regenerare urbană participativă, nominalizare Anuala de Arhitectură','Recul — spațiu cultural în hala fostei fabrici Industria Bumbacului, București (2020) — reconversia unei hale industriale degradate în scenă independentă, săli, ateliere și cafenea, cu intervenții minimale','Inițiative anterioare: Grădini Deschise, Bucureștiul nefolosit'],
     financial:'Neverificat.', reviews:'Neverificat.',
     blurb:'Colectiv interdisciplinar (nu birou clasic) axat pe regenerare urbană participativă și spații verzi comunitare, mai degrabă decât proiecte private comerciale.',
     sourceTitle:'Concretețea unei grădini urbane, la Buzău',
@@ -828,12 +855,12 @@ const DATA = [
     sourceUrl:'https://igloo.ro/un-iaht-urban-la-ploiesti-casa-c/'
   },
   {
-    id:'smaa', name:'SMAA', subtitle:'mihăilescu și asociații arhitectură',
+    id:'smaa', name:'SMAA', subtitle:'Silviu Mihăilescu și Asociații arhitectură',
     country:'ro', flag:'🇷🇴', location:'București', website:'https://smaa.ro/',
     founded:null, foundedNote:'necunoscută — de verificat',
-    architects:[{name:'(echipă mihăilescu și asociații)', tna:null, verified:null}],
+    architects:[{name:'Silviu Mihăilescu', tna:null, verified:null}],
     services:['Arhitectură','Arhitectură peisageră'], projectTypes:['Locuințe colective / ansambluri rezidențiale'],
-    notable:['Ansamblul rezidențial PARC, com. Tunari, Ilfov (2023) — 6 326 mp, fațadă din cărămidă roșie recuperată','Apare și în albumul „Case din România 9" (proiect „O linie pliată alb")'],
+    notable:['Ansamblul rezidențial PARC, com. Tunari, Ilfov (2023) — 6 326 mp, fațadă din cărămidă roșie recuperată','Atria Urban Resort, șos. Chitilei 242, București (2020) — ansamblu rezidențial cu cinci curți semi-închise în jurul unor grădini cu piscine, regim redus P+4; peisagistică Nicolas Triboi, consultanță urbanistică JTP','Apare și în albumul „Case din România 9" (proiect „O linie pliată alb")'],
     financial:'Neverificat.', reviews:'Neverificat.',
     blurb:'Birou bucureștean specializat în ansambluri rezidențiale de densitate medie, cu accent pe fațade din cărămidă recuperată.',
     sourceTitle:'Ritm echilibrat al locuirii: ansamblul PARC de SMAA',
@@ -875,10 +902,11 @@ const DATA = [
     founded:null, foundedNote:'necunoscută — de verificat',
     architects:[
       {name:'Radu Teacă', tna:null, verified:null},
-      {name:'Corina Nicola', tna:null, verified:null}
+      {name:'Corina Nicola', tna:null, verified:null},
+      {name:'Andrei Teacă', tna:null, verified:null}
     ],
     services:['Arhitectură'], projectTypes:['Rezidențial'],
-    notable:['Locuință unifamilială, Laguna Albastră, Corbeanca (2023) — structură din lemn lamelar aparent','Ansamblul rezidențial Stejarii Collection, București (2023) — 58 164 mp, certificare BREEAM Excellent, echipă mare (peste 10 arhitecți)','Radu Teacă a fost intervievat și pentru Amber Gardens (2013, cu Adest Architecture)'],
+    notable:['Locuință unifamilială, Laguna Albastră, Corbeanca (2023) — structură din lemn lamelar aparent','Ansamblul rezidențial Stejarii Collection, București (2023) — 58 164 mp, certificare BREEAM Excellent, echipă mare (peste 10 arhitecți)','Locuință „o vietate tentaculară", Dumbrava Vlăsiei, Balotești, jud. Ilfov (2020) — 290 mp, acoperiș ondulat și extensii „tentaculare" spre curți intime (semnat Radu Teacă Architect)','Radu Teacă a fost intervievat și pentru Amber Gardens (2013, cu Adest Architecture)'],
     financial:'Neverificat.', reviews:'Neverificat.',
     blurb:'Birou bucureștean — case cu structură de lemn expusă ca element estetic central, nu doar tehnic.',
     sourceTitle:'Când structura devine spațiu',
@@ -951,9 +979,12 @@ const DATA = [
     id:'westfourth', name:'Westfourth Architecture', subtitle:null,
     country:'ro', flag:'🇷🇴', location:'București', website:null,
     founded:null, foundedNote:'birou activ din anii 2000 — de confirmat exact',
-    architects:[{name:'Vladimir Arsene', tna:null, verified:null}],
+    architects:[
+      {name:'Vladimir Arsene', tna:null, verified:null},
+      {name:'Călin Negoescu', tna:'1401', verified:false, note:'drept de semnătură suspendat la cerere (la data verificării)'}
+    ],
     services:['Arhitectură'], projectTypes:['Clădiri de birouri înalte'],
-    notable:['Charles de Gaulle Plaza, București (2005) — unul dintre primele „turnuri de sticlă" de birouri din București','Menționat și pentru Ana Tower'],
+    notable:['Charles de Gaulle Plaza, București (2005) — unul dintre primele „turnuri de sticlă" de birouri din București','Ana Tower, bd. Poligrafiei 1-1F, București (2020) — turn de birouri de 26 de niveluri, siluetă zveltă obținută prin structură „tub în tub" din beton armat'],
     financial:'Neverificat.', reviews:'Neverificat.',
     blurb:'Birou bucureștean cu proiecte-reper în peisajul de birouri înalte al Bucureștiului de la începutul anilor 2000.',
     sourceTitle:'Mișcarea lumii într-un turn de sticlă: pendulul lui Foucault la București, la Charles de Gaulle Plaza',
@@ -1130,7 +1161,7 @@ const DATA = [
     architects:[
       {name:'Cristina Mihaela Woinaroski', tna:'1414', verified:true},
       {name:'Oana Floarea', tna:null, verified:null},
-      {name:'Ruxandra Nemțeanu', tna:null, verified:null}
+      {name:'Ruxandra Nemțeanu', tna:'1394', verified:true}
     ],
     services:['Arhitectură','Restaurare/reabilitare patrimoniu interbelic'], projectTypes:['Restaurare vilă interbelică'],
     notable:['Restaurarea Vilei inginer Constantin Bușilă, str. Rabat nr. 1, București (2020–2022) — casă din 1932 proiectată de Duiliu Marcu; recuperarea pietrei ornamentale, a pardoselilor și feroneriei originale'],
@@ -1146,8 +1177,8 @@ const DATA = [
     architects:[
       {name:'George-Mario Kuibuș', tna:'5224', verified:true}
     ],
-    services:['Arhitectură','Urbanism','Design'], projectTypes:['Clădire publică (justiție)','Reconversie urbană'],
-    notable:['Judecătoria Rădăuți, Piața Unirii 64, Rădăuți, jud. Suceava (2021) — 3 563 mp desfășurați pe lot de 2 228 mp, regim D+P+3E'],
+    services:['Arhitectură','Urbanism','Design'], projectTypes:['Clădire publică (justiție)','Reconversie urbană','Reconversie clădire modernistă (retail/birouri)'],
+    notable:['Judecătoria Rădăuți, Piața Unirii 64, Rădăuți, jud. Suceava (2021) — 3 563 mp desfășurați pe lot de 2 228 mp, regim D+P+3E','Magazinul București, București (2020) — reconversia fostului magazin universal modernist interbelic: atrium nou pe patru niveluri, cu păstrarea identității Art Deco (vitrine curbe, marmură și mozaic restaurate)'],
     financial:'CUI 27564567 (RE-ACT NOW ARCHITECTURE SRL) confirmat — restul datelor financiare neverificate.',
     reviews:'Neverificat.',
     blurb:'Studio bucureștean de arhitectură sustenabilă și urbanism condus de Mario Kuibuș (profesor UAUIM 1998–2015), cu peste 30 de ani de activitate — proiecte de scară urbană și clădiri publice.',
@@ -1282,15 +1313,16 @@ const DATA = [
     country:'ro', flag:'🇷🇴', location:'București', website:null,
     founded:null, foundedNote:'necunoscută — de verificat',
     architects:[
-      {name:'Daniel Popescu', tna:null, verified:null, note:'nu a fost regăsit în tabloul OAR București la această verificare — de reconfirmat'},
+      {name:'Daniel Nicolae Popescu', tna:null, verified:null, note:'nu a fost regăsit în tabloul OAR București la această verificare — de reconfirmat'},
       {name:'Irina Stinghe', tna:'7107', verified:true},
       {name:'Adela Voinea', tna:null, verified:null},
-      {name:'Ștefan Căplescu', tna:null, verified:null}
+      {name:'Ștefan Căplescu', tna:null, verified:null},
+      {name:'Oana Gîtlan', tna:null, verified:null}
     ],
-    services:['Arhitectură'], projectTypes:['Renovare + extindere locuință'],
-    notable:['Casa M, str. Erou Iancu Nicolae, Voluntari, jud. Ilfov (2020) — renovarea unei case de la începutul anilor 2000, reorganizare spațială, paletă lemn/metal/cărămidă/beton'],
+    services:['Arhitectură'], projectTypes:['Renovare + extindere locuință','Aparthotel','Amenajare rezidențială'],
+    notable:['Casa M, str. Erou Iancu Nicolae, Voluntari, jud. Ilfov (2020) — renovarea unei case de la începutul anilor 2000, reorganizare spațială, paletă lemn/metal/cărămidă/beton','Waterfront Residence Aparthotel, Voluntari, jud. Ilfov (2020) — clădire hibrid rezidențial–hotelier, fațadă spre stradă cu grile metalice și paravane de lemn, interior orientat spre oglinda de apă'],
     financial:'Neverificat.', reviews:'Neverificat.',
-    blurb:'Birou bucureștean — apărea în lista de verificat din albumele igloobest, acum confirmat printr-un proiect de renovare rezidențială.',
+    blurb:'Birou bucureștean — apărea în lista de verificat din albumele igloobest, acum confirmat prin proiecte rezidențiale și un aparthotel.',
     sourceTitle:'Casa M – limite volatile între vechi și nou',
     sourceUrl:'https://igloo.ro/casa-m-limite-volatile-intre-vechi-si-nou/'
   },
@@ -1473,14 +1505,15 @@ const DATA = [
     country:'ro', flag:'🇷🇴', location:'București', website:null,
     founded:null, foundedNote:'necunoscută — de verificat',
     architects:[
-      {name:'Eduard Baicu', tna:null, verified:null},
+      {name:'Eduard Nicolae Baicu Stănescu', tna:null, verified:null},
       {name:'Cristian Matei', tna:null, verified:null},
-      {name:'Andrei Oțet', tna:null, verified:null}
+      {name:'Andrei Oțet', tna:null, verified:null},
+      {name:'Andreea Iuliana Vornicu', tna:null, verified:null}
     ],
-    services:['Arhitectură','Design interior'], projectTypes:['Amenajare rezidențială (maximalism)'],
-    notable:['Vila O, Voluntari, jud. Ilfov (2021) — unificarea a două unități locative prin materialitate sculpturală, estetică organică, finisaje și materiale prețioase la comandă'],
+    services:['Arhitectură','Design interior'], projectTypes:['Amenajare rezidențială (maximalism)','Rezidențial de litoral'],
+    notable:['Vila O, Voluntari, jud. Ilfov (2021) — unificarea a două unități locative prin materialitate sculpturală, estetică organică, finisaje și materiale prețioase la comandă','Vila Olimp, Olimp, jud. Constanța (2020) — vilă dublă cu design de inspirație marină, fațade din compozit Kerrock, motive geometrice circulare'],
     financial:'Neverificat.', reviews:'Neverificat.',
-    blurb:'Birou bucureștean — amenajări rezidențiale sculpturale, cu estetică organică și materialitate expresivă (în acest articol, un proiect de interior).',
+    blurb:'Birou bucureștean — amenajări și case rezidențiale sculpturale, cu estetică organică și materialitate expresivă.',
     sourceTitle:'Interpretare plastică a unui caracter maximalist. Vila O, București',
     sourceUrl:'https://igloo.ro/interpretare-plastica-a-unui-caracter-maximalist-vila-o-bucuresti/'
   },
@@ -1620,6 +1653,174 @@ const DATA = [
     blurb:'Arhitect restaurator specializat în arhitectura tradițională săsească din Transilvania — autor și al unui manual de referință despre casa săsească.',
     sourceTitle:'Ferma de Biodiversitate Cobor, Ticușu Vechi, Brașov',
     sourceUrl:'https://igloo.ro/ferma-de-biodiversitate-cobor-ticusu-vechi-brasov/'
+  },
+
+  {
+    id:'architect-service', name:'Architect Service', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Simona Ciurea', tna:'4116', verified:true},
+      {name:'Alis Raduslav-Marin', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Clădiri de birouri'],
+    notable:['EQUILIBRIUM Offices, str. Gara Herăstrău 2, București (2019) — două turnuri de birouri de 11 niveluri legate printr-o bază pietonală unitară, cu referințe la istoria aviatică a sitului'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean de arhitectură — clădiri de birouri de mari dimensiuni în nordul Bucureștiului.',
+    sourceTitle:'Birouri EQUILIBRIUM. Evocând natura umană mereu adaptabilă',
+    sourceUrl:'https://igloo.ro/birouri-equilibrium-evocand-natura-umana-mereu-adaptabila/'
+  },
+  {
+    id:'dual-office', name:'DUAL Office', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Cluj-Napoca', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Emilian Gavrilă', tna:null, verified:null, note:'probabil OAR filiala Transilvania — netestat'},
+      {name:'Nadejda Gologan', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Locuințe semicolective'],
+    notable:['Imobile semicolective, Cluj-Napoca (2020) — două clădiri cu console extinse și niveluri superioare retrase, cu vedere panoramică spre oraș'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou clujean — locuințe semicolective cu console expresive și deschideri panoramice.',
+    sourceTitle:'Orașul privit de sus. Imobile semicolective, Cluj-Napoca',
+    sourceUrl:'https://igloo.ro/orasul-privit-de-sus-imobile-semicolective-cluj-napoca/'
+  },
+  {
+    id:'atelier-mass', name:'Atelier MASS', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Cluj-Napoca', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Camelia Sisak', tna:null, verified:null, note:'probabil OAR filiala Transilvania — netestat'},
+      {name:'Tamás Sisak', tna:null, verified:null},
+      {name:'Roxana Udrescu', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Rezidențial (locuințe cuplate)'],
+    notable:['Casa C(eahlău), str. Ceahlău, Cluj-Napoca (2020) — două locuințe cuplate cu estetică neo-modernistă, tratament diferențiat al materialelor pentru fiecare unitate'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou clujean — locuințe cuplate cu limbaj neo-modernist și caracter distinct pentru fiecare unitate.',
+    sourceTitle:'O formulă arhitecturală de efect. Casa C(eahlău)',
+    sourceUrl:'https://igloo.ro/o-formula-arhitecturala-de-efect-casa-ceahlau/'
+  },
+  {
+    id:'stables-office', name:'Stables Office', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Cluj-Napoca', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Laura Dragomir', tna:null, verified:null, note:'probabil OAR filiala Transilvania — netestat'},
+      {name:'Valentin Meteș', tna:null, verified:null}
+    ],
+    services:['Arhitectură','Design interior'], projectTypes:['Birouri / co-working în clădire istorică'],
+    notable:['Stables Office (spațiu de co-working), str. Onisifor Ghibu 20A, Cluj-Napoca (2020) — amenajare cu elemente Art Deco într-o clădire istorică cu coloane de fontă din 1885'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou clujean — amenajări de birouri și co-working inserate în clădiri istorice.',
+    sourceTitle:'Stables Office',
+    sourceUrl:'https://igloo.ro/stables-office/'
+  },
+  {
+    id:'imoplan', name:'IMOPLAN', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Maria Elena Bucur', tna:'3888', verified:true}
+    ],
+    services:['Arhitectură'], projectTypes:['Clădiri de birouri'],
+    notable:['Eminescu Offices, str. Mihai Eminescu 108–112, București (2019) — clădire de birouri cu proporții raționaliste, fațade ventilate placate cu piatră și benzi orizontale, integrare contextuală'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean — clădiri de birouri cu limbaj raționalist și fațade ventilate din piatră.',
+    sourceTitle:'Înrămare raționalistă – Eminescu Offices',
+    sourceUrl:'https://igloo.ro/inramare-rationalista-eminescu-offices/'
+  },
+  {
+    id:'criba', name:'Criba Proiect / Criba Design', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Cristina Olga Gociman', tna:'1126', verified:true, note:'profesoară UAUIM, specialistă în protecția patrimoniului și reducerea riscului seismic'},
+      {name:'Ruxandra Nemțeanu', tna:'1394', verified:true, note:'aceeași arh. apărută și la ICON Studio de Arhitectură'}
+    ],
+    services:['Arhitectură','Restaurare monumente istorice','Consolidare seismică'], projectTypes:['Restaurare + reconversie conac de patrimoniu'],
+    notable:['Consolidarea și restaurarea Castelului Oteteleșanu, str. Atomiștilor 409, Măgurele, jud. Ilfov (2011–2020) — conac sec. XIX, restaurat la faza 1893–1894; azi sediu al Institutului Național de Cercetare-Dezvoltare pentru Fizica Materialelor'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean de restaurare de patrimoniu și consolidare seismică, coordonat de prof. dr. arh. Cristina Olga Gociman.',
+    sourceTitle:'Castelul Oteteleșanu',
+    sourceUrl:'https://igloo.ro/castelul-otetelesanu/'
+  },
+  {
+    id:'nbc-arhitect', name:'NBC Arhitect', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Bogdan Constantin Neagu', tna:'2732', verified:true},
+      {name:'Ovidiu Lucaci', tna:null, verified:null},
+      {name:'Dragoș Constantin', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Locuințe colective'],
+    notable:['VIDA Herăstrău, str. Nicolae Caramfil 85C, București (2020) — imobil rezidențial de înălțime medie lângă lacurile din nordul Bucureștiului, plan în formă de U, cu balcoane ample ca element de mediere'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean — apărea în lista de verificat din albumele igloobest, acum confirmat prin imobile rezidențiale colective.',
+    sourceTitle:'Conectat la mediu – VIDA HERĂSTRĂU',
+    sourceUrl:'https://igloo.ro/conectact-la-mediu-vida-herastrau/'
+  },
+  {
+    id:'prodid', name:'Prodid', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'București', website:null,
+    founded:null, foundedNote:'coordonat de arh. Șerban Sturdza',
+    architects:[
+      {name:'Șerban Sturdza', tna:'420', verified:true},
+      {name:'Ioan-Antoniu Baghiu', tna:'4781', verified:true},
+      {name:'Corina Stoianovici', tna:null, verified:null}
+    ],
+    services:['Arhitectură','Reinterpretare tipologii de patrimoniu'], projectTypes:['Pensiune / turism rural','Reinterpretare culă'],
+    notable:['Pensiunea La Moșie (transfer Cula Cartianu), sat Bolovani, com. Cornățelu, jud. Dâmbovița (2015) — pensiune P+1 cu 22 de camere, reinterpretare contemporană a tipologiei culei fortificate sec. XVIII, prin volume orizontale suprapuse cu prispe'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou bucureștean coordonat de arh. Șerban Sturdza (fost președinte OAR, președinte Pro Patrimonio) — apărea în lista de verificat; reinterpretează tipologii de patrimoniu în proiecte noi.',
+    sourceTitle:'Transfer Cula Cartianu – Pensiunea La Moșie',
+    sourceUrl:'https://igloo.ro/transfer-cula-cartianu-pensiunea-la-mosie/'
+  },
+  {
+    id:'4zet', name:'4ZET Architects', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Odorheiu Secuiesc, jud. Harghita', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Várday Zsolt', tna:null, verified:null, note:'probabil OAR filiala Harghita — netestat'},
+      {name:'Várday Kinga', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Rezidențial (arhetip vernacular)'],
+    notable:['Casa M35, Odorheiu Secuiesc, jud. Harghita (2019) — gospodărie multigenerațională regândită pe trei parcele, prin demolare selectivă și reconstrucție care respectă obiceiurile constructive locale'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou din Odorheiu Secuiesc — reinventarea relațiilor spațiale în forme vernaculare tradiționale.',
+    sourceTitle:'Influențe vernaculare în forme noi. Casa M35 by 4ZET Architects',
+    sourceUrl:'https://igloo.ro/casa-m35-by-4zet-architects/'
+  },
+  {
+    id:'tecon-architects', name:'Tecon Architects', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Cluj-Napoca', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Bogdan Babici', tna:null, verified:null, note:'probabil OAR filiala Transilvania — netestat'},
+      {name:'Alexandru Maftei', tna:null, verified:null},
+      {name:'Andrei Bîsceanu', tna:null, verified:null}
+    ],
+    services:['Arhitectură'], projectTypes:['Rezidențial pe teren dificil'],
+    notable:['Casa Doja 36, str. Gheorghe Doja 36, Cluj-Napoca (2019) — locuință-punte suspendată care negociază o topografie dificilă prin tranziții graduale semi-public → privat, pe piloni de beton'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou clujean — apărea în lista de verificat din albumele igloobest, acum confirmat printr-o casă pe teren în pantă.',
+    sourceTitle:'Casa Doja 36, by Tecon Architects',
+    sourceUrl:'https://igloo.ro/casa-doja-36-by-tecon-architects/'
+  },
+  {
+    id:'acs-studio', name:'ACS Studio', subtitle:null,
+    country:'ro', flag:'🇷🇴', location:'Moșnița Nouă, jud. Timiș', website:null,
+    founded:null, foundedNote:'necunoscută — de verificat',
+    architects:[
+      {name:'Constantin Șelariu', tna:null, verified:null, note:'probabil OAR filiala Timiș — netestat'}
+    ],
+    services:['Arhitectură','Arhitectură peisageră'], projectTypes:['Rezidențial (locuință parter)'],
+    notable:['Casa P31, Moșnița Nouă, jud. Timiș (2017) — locuință pe un singur nivel organizată în jurul unor curți interioare cu „arbori și iarbă protejați de cutii luminoase de sticlă"'],
+    financial:'Neverificat.', reviews:'Neverificat.',
+    blurb:'Birou din zona Timișoarei — case parter minimaliste organizate în jurul curților interioare.',
+    sourceTitle:'În liniștea naturii. Casa P31 – ACS Studio',
+    sourceUrl:'https://igloo.ro/in-linistea-naturii-casa-p31-acs-studio/'
   },
 
   /* ---------- international (no OAR relevance) ---------- */
@@ -1764,10 +1965,29 @@ function renderStats(){
     {n: DATA.length, l:'Studiouri în registru'},
     {n: ro.length, l:'Studiouri românești'},
     {n: verifiedArch, l:'Arhitecți verificați OAR'},
-    {n: 60, l:'Pagini categorie parcurse / 171'},
+    {n: 70, l:'Pagini categorie parcurse / 171'},
   ];
   document.getElementById('statsbar').innerHTML = stats.map(s=>`<div class="stat"><b>${s.n}</b><span>${s.l}</span></div>`).join('');
-  document.getElementById('pagecount').textContent = '01–60 / 171';
+  document.getElementById('pagecount').textContent = '01–70 / 171';
+}
+
+/* orașe pentru filtrare rapidă — potrivire pe substring în câmpul location */
+const CITY_TAGS = ['București','Cluj-Napoca','Timișoara','Constanța','Brașov','Sibiu','Oradea','Craiova','Iași','Ploiești','Arad','Târgu Mureș'];
+let currentCity = '';
+const cityCount = c => DATA.filter(d => (d.location||'').toLowerCase().includes(c.toLowerCase())).length;
+
+function renderCityChips(){
+  const bar = document.getElementById('citybar');
+  const cities = CITY_TAGS.map(c=>({c, n:cityCount(c)})).filter(x=>x.n>=2).sort((a,b)=>b.n-a.n);
+  bar.innerHTML = '<span class="cchip-label">Oraș</span>' +
+    cities.map(x=>`<button class="cchip${currentCity===x.c?' active':''}" data-city="${x.c}">${x.c} <span class="n">${x.n}</span></button>`).join('');
+  bar.querySelectorAll('.cchip').forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      currentCity = (currentCity === chip.dataset.city) ? '' : chip.dataset.city;
+      renderCityChips();
+      renderGrid(currentFilter, document.getElementById('search').value);
+    });
+  });
 }
 
 function renderGrid(filter='all', query=''){
@@ -1776,9 +1996,10 @@ function renderGrid(filter='all', query=''){
   if(filter==='ro') items = items.filter(d=>d.country==='ro');
   if(filter==='intl') items = items.filter(d=>d.country==='intl');
   if(filter==='verified') items = items.filter(d=>(d.architects||[]).some(a=>a.verified));
+  if(currentCity) items = items.filter(d=> (d.location||'').toLowerCase().includes(currentCity.toLowerCase()));
   if(query){
     const q = query.toLowerCase();
-    items = items.filter(d=> (d.name+' '+(d.subtitle||'')+' '+(d.architects||[]).map(a=>a.name).join(' ')+' '+(d.notable||[]).join(' ')).toLowerCase().includes(q));
+    items = items.filter(d=> (d.name+' '+(d.subtitle||'')+' '+(d.location||'')+' '+(d.architects||[]).map(a=>a.name).join(' ')+' '+(d.notable||[]).join(' ')).toLowerCase().includes(q));
   }
   grid.innerHTML = items.map(card).join('');
   document.getElementById('grid-count').textContent = items.length + ' rezultate';
@@ -1799,6 +2020,7 @@ document.getElementById('search').addEventListener('input', e=>{
 });
 
 renderStats();
+renderCityChips();
 renderGrid();
 </script>
 </body>

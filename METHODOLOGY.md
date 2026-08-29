@@ -6,10 +6,11 @@ Toate datele sunt în `index.html`, în array-ul JavaScript `DATA`.
 
 ## Stadiu curent
 
-- **Pagini parcurse:** 1–60 din 171 (la nivel de titlu, integral).
-- **~155 de articole** deschise integral pentru extragerea creditelor de arhitectură.
-- **91 de studiouri** în registru: 84 românești + 7 internaționale.
+- **Pagini parcurse:** 1–70 din 171 (la nivel de titlu, integral).
+- **~175 de articole** deschise integral pentru extragerea creditelor de arhitectură.
+- **102 studiouri** în registru: 95 românești + 7 internaționale.
 - Verificare OAR București făcută pe literele: A, B, C, D, G, K, L, M, N, P, R, S, Ș, W, Z.
+- Rundă nouă începe cu **pagina 71**.
 
 ## Pași, pentru fiecare pagină de categorie
 
@@ -24,7 +25,7 @@ Toate datele sunt în `index.html`, în array-ul JavaScript `DATA`.
 ## Reguli de calitate
 
 - Nu se inventează date. Fără CUI, an de înființare sau recenzii → se scrie explicit „Neverificat" / „necunoscută — de verificat".
-- Din pagina 21 înainte, articolele clar internaționale (țară/oraș străin în titlu) au fost sărite fără a fi deschise, pentru optimizare. Pagini integral internaționale până acum: 44, și aproape integral 46, 47, 50, 56, 58.
+- Din pagina 21 înainte, articolele clar internaționale (țară/oraș străin în titlu) au fost sărite fără a fi deschise, pentru optimizare. Pagini integral (sau aproape integral) internaționale până acum: 44, 46, 47, 50, 56, 58, 63. Începând cu ~pagina 60 (arhivă 2020, era pandemică), densitatea de studiouri românești noi scade — mai multe eseuri speculative, roundup-uri „igloo likes" și interviuri.
 - Date de firmă căutate pe termene.ro / listafirme.eu — CUI confirmat doar unde denumirea a permis identificare certă.
 
 ## Limitări
@@ -39,15 +40,18 @@ Toate datele sunt în `index.html`, în array-ul JavaScript `DATA`.
 Interviuri / profiluri / eseuri fără proiect construit cu adresă:
 
 - Atelier TERRApia (practică de cercetare/educație)
-- Interviuri: Ilinca Păun Constantinescu, Adrian Phiffer, Oana Stănescu, Ștefan Davidovici, Anda Ștefan, Raluca Șoaita, Iulia Stanciu, Bogdan Anghel, VATRAA, iungo studio
-- Studiouri de vizualizare arhitecturală: bucharest.studio, Panoptikon
+- Interviuri: Ilinca Păun Constantinescu, Adrian Phiffer, Oana Stănescu, Ștefan Davidovici, Anda Ștefan, Raluca Șoaita, Iulia Stanciu, Bogdan Anghel, VATRAA, iungo studio, Marcos Cruz, Nathalie de Vries (MVRDV)
+- Serii de portret „A≤40" (fără proiect documentat cu adresă): Silviu Mihăilescu, Studio 1408, LAMA Arhitectura, Bogdan Ciocodeică Studio
+- Interviuri de fotografi de arhitectură: Mihai Caranica, Radu Matei, Alexandra Bendea, Arthur Țințu, Cristi Radu; studiouri de vizualizare: bucharest.studio, Panoptikon, viewcatchers
+- Interviu „Arhitectura în vremea COVID-19: Ioka Design și Studio3plus"
+- Eseuri istorice (fără intervenție contemporană cu echipă nominalizată): Ioana Grigorescu, Henrieta Delavrancea-Gibory
 - Reactivarea culturală a Așezămintelor Ion I. C. Brătianu (ARCEN) — fără birou de proiectare nominalizat
 - Pavilionul BIT.BIO.BOT (Bienala de la Veneția 2021)
 - Dosare / eseuri tematice igloo (ex. „Dosar #210 — Pe Topolog, în sus")
 
 ## Cum se extinde
 
-- Rundă nouă începând cu **pagina 61 din 171**.
+- Rundă nouă începând cu **pagina 71 din 171**.
 - Fiecare studio nou = obiect în `DATA` din `index.html`.
 - Verificarea OAR se face pe tablourile teritoriale publice (București sau alte filiale județene).
 

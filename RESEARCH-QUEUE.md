@@ -16,8 +16,6 @@ Când un studio de aici intră în `DATA` (`index.html`), se șterge din aceast�
 - [ ] Florian Stanciu
 - [ ] Mădălin Ghigeanu
 - [ ] Daniel Ciocăzanu
-- [ ] Tecon
-- [ ] NBC Arhitect
 - [ ] DE3 Grup
 - [ ] Prographic Architecture Studio
 - [ ] Centerpoint
@@ -25,7 +23,6 @@ Când un studio de aici intră în `DATA` (`index.html`), se șterge din aceast�
 - [ ] Blipsz + Atelier FKM
 - [ ] Corina Dîndăreanu
 - [ ] Filofi și Trandafir Arhitectură
-- [ ] Prodid
 - [ ] Outline Architecture Office
 - [ ] Format Architecture & Design
 - [ ] Kub Planning
