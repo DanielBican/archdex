@@ -110,74 +110,110 @@
   .statsbar .stat b{font-size:1.5rem;font-family:'Fraunces',serif;font-weight:600;display:block;color:#F3F1E7;}
   .statsbar .stat span{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:#9AA6B8;}
 
-  /* ---------- Controls ---------- */
-  .controls{
-    max-width:1180px;
-    margin:0 auto;
-    padding:1.6rem 1.5rem 0;
-    display:flex;
-    flex-wrap:wrap;
-    gap:.9rem;
-    align-items:center;
+  /* ---------- Search bar (sticky) ---------- */
+  .searchwrap{
+    position:sticky; top:0; z-index:30;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .searchwrap-inner{
+    max-width:1180px; margin:0 auto;
+    padding:.8rem 1.5rem;
+    display:flex; gap:.6rem; align-items:center;
   }
   #search{
-    flex:1 1 260px;
-    padding:.65rem .9rem;
+    flex:1 1 auto; min-width:0;
+    padding:.7rem .95rem;
     border:1px solid var(--line);
     background:var(--cream);
     font-family:'Inter',sans-serif;
-    font-size:.95rem;
+    font-size:1rem;
     border-radius:var(--radius);
     color:var(--ink);
   }
   #search:focus{outline:2px solid var(--brick);outline-offset:1px;}
-  .chip{
-    padding:.5rem 1rem;
-    border:1px solid var(--ink);
-    background:transparent;
-    border-radius:999px;
-    font-size:.82rem;
-    font-family:'Inter',sans-serif;
-    font-weight:600;
-    cursor:pointer;
-    color:var(--ink);
-    transition:.15s;
-  }
-  .chip.active, .chip:hover{background:var(--ink);color:var(--cream);}
-
-  .citybar{
-    max-width:1180px;
-    margin:0 auto;
-    padding:.9rem 1.5rem 0;
-    display:flex;
-    flex-wrap:wrap;
-    gap:.45rem;
-    align-items:center;
-  }
-  .citybar .cchip-label{
-    font-family:'IBM Plex Mono',monospace;
-    font-size:.68rem;
-    text-transform:uppercase;
-    letter-spacing:.09em;
-    color:var(--ink-soft);
-    margin-right:.15rem;
-  }
-  .cchip{
-    padding:.3rem .75rem;
+  #sort{
+    flex-shrink:0;
+    padding:.55rem .5rem;
     border:1px solid var(--line);
-    background:transparent;
-    border-radius:999px;
+    background:var(--cream);
     font-family:'IBM Plex Mono',monospace;
-    font-size:.75rem;
-    cursor:pointer;
-    color:var(--ink-soft);
-    transition:.15s;
+    font-size:.78rem;
+    border-radius:var(--radius);
+    color:var(--ink);
   }
-  .cchip:hover, .cchip.active{background:var(--ink);color:var(--cream);border-color:var(--ink);}
-  .cchip .n{opacity:.55;}
+  .filterbtn{
+    display:none;
+    align-items:center; gap:.4rem; flex-shrink:0;
+    padding:.6rem .9rem;
+    border:1px solid var(--ink);
+    background:var(--ink); color:var(--cream);
+    border-radius:999px;
+    font-family:'Inter',sans-serif; font-weight:600; font-size:.85rem;
+    cursor:pointer;
+  }
+  .filterbtn .badge{
+    background:var(--brick); color:#fff;
+    border-radius:999px; padding:0 .38rem;
+    font-size:.72rem; min-width:1.05rem; text-align:center; line-height:1.35;
+  }
+
+  .activebar{
+    max-width:1180px; margin:0 auto;
+    padding:0 1.5rem;
+    display:flex; gap:.4rem; align-items:center;
+    overflow-x:auto; scrollbar-width:none;
+  }
+  .activebar:not(:empty){ padding-bottom:.7rem; }
+  .activebar::-webkit-scrollbar{ display:none; }
+  .achip{
+    flex-shrink:0;
+    display:inline-flex; align-items:center; gap:.35rem;
+    padding:.26rem .3rem .26rem .6rem;
+    background:var(--ink); color:var(--cream);
+    border-radius:999px;
+    font-size:.75rem; font-family:'IBM Plex Mono',monospace;
+    white-space:nowrap;
+  }
+  .achip button{
+    background:rgba(243,241,231,.22); border:none; color:var(--cream);
+    width:1.05rem; height:1.05rem; border-radius:999px; cursor:pointer;
+    font-size:.62rem; line-height:1; display:flex; align-items:center; justify-content:center; padding:0;
+  }
+  .achip.clear{
+    background:transparent; color:var(--ink-soft);
+    border:1px solid var(--line); cursor:pointer;
+    padding:.26rem .6rem;
+  }
+
+  /* ---------- Layout: facets + results ---------- */
+  .layout{
+    max-width:1180px; margin:0 auto;
+    padding:1.4rem 1.5rem 4rem;
+    display:grid; grid-template-columns:238px 1fr; gap:2.4rem;
+    align-items:start;
+  }
+  .facets{ position:sticky; top:4.4rem; }
+  .facet-drawerhead{ display:none; }
+  .facet-group{ margin-bottom:1.5rem; }
+  .facet-group h3{
+    font-family:'IBM Plex Mono',monospace;
+    text-transform:uppercase; font-size:.68rem; letter-spacing:.09em;
+    color:var(--ink-soft); margin:0 0 .45rem;
+    border-bottom:1px solid var(--line); padding-bottom:.4rem;
+  }
+  .facet-opt{
+    display:flex; align-items:center; gap:.55rem;
+    padding:.3rem 0; font-size:.85rem; color:var(--ink-2); cursor:pointer;
+  }
+  .facet-opt input{ accent-color:var(--brick); width:1rem; height:1rem; flex-shrink:0; }
+  .facet-opt.disabled{ opacity:.36; cursor:default; }
+  .facet-opt .fcount{ margin-left:auto; font-family:'IBM Plex Mono',monospace; font-size:.75rem; color:var(--ink-soft); }
+  .facet-apply{ display:none; }
+  .results{ min-width:0; }
 
   /* ---------- Grid ---------- */
-  main{max-width:1180px;margin:0 auto;padding:1.6rem 1.5rem 4rem;}
+  main{display:block;}
   .section-label{
     font-family:'IBM Plex Mono',monospace;
     text-transform:uppercase;
@@ -186,14 +222,30 @@
     color:var(--ink-soft);
     border-bottom:1px solid var(--line);
     padding-bottom:.5rem;
-    margin:2.4rem 0 1.2rem;
+    margin:.2rem 0 1.2rem;
     display:flex;
     justify-content:space-between;
   }
   .grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill, minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fill, minmax(272px,1fr));
     gap:1rem;
+  }
+  .cat-tag{
+    background:rgba(62,110,99,.13); color:var(--teal);
+    padding:.16rem .5rem; border-radius:2px;
+    font-family:'IBM Plex Mono',monospace; font-size:.71rem;
+  }
+  .card .match{
+    font-size:.8rem; color:var(--ink-soft);
+    border-left:2px solid var(--brick);
+    padding-left:.55rem; margin-top:.05rem;
+  }
+  .card .match[hidden]{ display:none; }
+  mark{ background:rgba(162,78,49,.24); color:inherit; border-radius:2px; padding:0 .08em; }
+  .linkish{
+    background:none; border:none; color:var(--brick);
+    font:inherit; text-decoration:underline; cursor:pointer; padding:0;
   }
   .card{
     background:var(--cream);
@@ -290,9 +342,51 @@
 
   .empty{padding:2rem 0;color:var(--ink-soft);font-style:italic;}
 
-  @media (max-width:760px){
-    .titleblock-inner{grid-template-columns:1fr;}
-    .stampfield{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:860px){
+    .titleblock{ padding:1.5rem 1.1rem 0; }
+    .titleblock-inner{ grid-template-columns:1fr; gap:1.2rem; padding-bottom:1.1rem; }
+    .titleblock h1{ font-size:clamp(1.7rem,7vw,2.3rem); }
+    .stampfield{ grid-template-columns:repeat(2,1fr); }
+    .statsbar{ gap:1.3rem; padding:.9rem 0 1.1rem; }
+    .statsbar .stat b{ font-size:1.2rem; }
+
+    .searchwrap-inner{ padding:.7rem 1.1rem; flex-wrap:wrap; }
+    #search{ font-size:16px; flex:1 1 100%; order:1; }
+    .filterbtn{ display:inline-flex; order:2; }
+    #sort{ order:3; flex:1 1 auto; }
+    .activebar{ padding-left:1.1rem; padding-right:1.1rem; }
+
+    .layout{ grid-template-columns:1fr; gap:0; padding:1rem 1.1rem 4rem; }
+    .facets{
+      position:fixed; inset:0; top:auto; z-index:60;
+      background:var(--paper);
+      display:flex; flex-direction:column;
+      transform:translateY(100%); transition:transform .25s ease;
+      overflow:hidden;
+    }
+    .facets.open{ transform:translateY(0); }
+    .facet-drawerhead{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1rem 1.2rem; border-bottom:1px solid var(--line);
+      font-family:'Fraunces',serif; font-size:1.25rem;
+    }
+    .facet-drawerhead button{ background:none; border:none; font-size:1.4rem; cursor:pointer; color:var(--ink); line-height:1; }
+    #facetbody{ padding:1rem 1.2rem; overflow-y:auto; flex:1; }
+    .facet-apply{
+      display:block; width:100%; border:none; cursor:pointer;
+      padding:1rem; background:var(--brick); color:#fff;
+      font-family:'Inter',sans-serif; font-weight:700; font-size:1rem;
+    }
+    .facet-opt{ padding:.5rem 0; font-size:.95rem; }
+
+    .grid{ grid-template-columns:1fr; }
+    .stamp-svg{ width:46px; height:46px; }
+    .stamps{ gap:.4rem; }
+    .stamp-wrap{ width:100%; }
+  }
+  @media (max-width:560px){
+    .stampfield{ display:none; }
+    .titleblock-inner{ padding-bottom:.6rem; }
   }
 </style>
 </head>
@@ -316,20 +410,40 @@
   <div class="statsbar" id="statsbar"></div>
 </header>
 
-<div class="controls">
-  <input type="text" id="search" placeholder="Caută după nume de studio, arhitect sau proiect…">
-  <button class="chip active" data-filter="all">Toate</button>
-  <button class="chip" data-filter="ro">🇷🇴 România</button>
-  <button class="chip" data-filter="intl">🌍 Internațional</button>
-  <button class="chip" data-filter="verified">✓ Verificate OAR</button>
+<div class="searchwrap">
+  <div class="searchwrap-inner">
+    <input type="search" id="search" autocomplete="off" aria-label="Caută în registru"
+           placeholder="Caută: studio, arhitect, oraș, proiect, „cărămidă", „BNA"…">
+    <button class="filterbtn" id="filterbtn" type="button" aria-expanded="false" aria-controls="facets">
+      Filtre <span class="badge" id="filterbadge" hidden>0</span>
+    </button>
+    <select id="sort" aria-label="Sortare rezultate">
+      <option value="rel">Sortare: implicită</option>
+      <option value="az">A → Z</option>
+      <option value="city">după oraș</option>
+      <option value="projects">nr. proiecte</option>
+      <option value="verified">verificate întâi</option>
+    </select>
+  </div>
+  <div class="activebar" id="activebar"></div>
 </div>
 
-<div class="citybar" id="citybar"></div>
-
 <main>
-  <div class="section-label"><span id="grid-label">Studiouri</span><span id="grid-count"></span></div>
-  <div class="grid" id="grid"></div>
-  <p class="empty" id="empty-msg" style="display:none;">Niciun rezultat pentru această căutare.</p>
+  <div class="layout">
+    <aside class="facets" id="facets" aria-label="Filtre">
+      <div class="facet-drawerhead">
+        <span>Filtre</span>
+        <button type="button" id="facetclose" aria-label="Închide filtrele">✕</button>
+      </div>
+      <div id="facetbody"></div>
+      <button class="facet-apply" type="button" id="facetapply">Arată rezultatele</button>
+    </aside>
+    <section class="results">
+      <div class="section-label"><span id="grid-count" aria-live="polite"></span></div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty-msg" hidden>Niciun rezultat pentru filtrele curente. <button class="linkish" id="clearall">Șterge filtrele</button></p>
+    </section>
+  </div>
 </main>
 
 <footer>
@@ -2199,16 +2313,23 @@ function stampSVG(a){
   </div>`;
 }
 
+const CAT_SHORT = {
+  restaurare:'Restaurare', reconversie:'Reconversie', locuinta:'Locuință',
+  colective:'Loc. colective', birouri:'Birouri', public:'Public', cultural:'Cultural',
+  hotelier:'Hotelier', sacru:'Sacru', urban:'Urban/peisaj', interior:'Interior',
+  educational:'Educațional', sport:'Sport', sanatate:'Sănătate'
+};
+
 function card(s){
   const isRo = s.country === 'ro';
-  const architectsBlock = (s.architects||[]).map(a=>{
-    if(isRo) return stampSVG(a);
-    return `<div class="stamp-name"><b>${a.name}</b></div>`;
-  }).join('');
+  const architectsBlock = (s.architects||[]).map(a=>
+    isRo ? stampSVG(a) : `<div class="stamp-name"><b>${a.name}</b></div>`
+  ).join('');
+  const catTags = (s._cats||[]).map(c=>`<span class="cat-tag">${CAT_SHORT[c]||c}</span>`).join('');
+  const pc = s._projectCount||0;
 
   return `
-  <div class="card ${isRo?'':'intl'}" data-country="${s.country}" data-verified="${(s.architects||[]).some(a=>a.verified)}"
-       data-search="${(s.name+' '+(s.subtitle||'')+' '+(s.architects||[]).map(a=>a.name).join(' ')+' '+(s.notable||[]).join(' ')).toLowerCase()}">
+  <div class="card ${isRo?'':'intl'}" data-country="${s.country}">
     <div class="card-head">
       <div>
         <h3>${s.name}</h3>
@@ -2219,10 +2340,13 @@ function card(s){
     <div class="meta-row">
       <span class="tag">${s.location||'—'}</span>
       ${s.founded?`<span class="tag brick">din ${s.founded}</span>`:''}
-      ${isRo && (s.architects||[]).some(a=>a.verified)?`<span class="tag brick">✓ OAR verificat</span>`:''}
+      ${isRo && s._verified?`<span class="tag brick">✓ OAR</span>`:''}
+      ${pc?`<span class="tag">${pc} ${pc===1?'proiect':'proiecte'}</span>`:''}
     </div>
+    ${catTags?`<div class="meta-row">${catTags}</div>`:''}
+    <div class="match" hidden></div>
     <p class="blurb">${s.blurb}</p>
-    <button class="toggle-btn" onclick="this.nextElementSibling.classList.toggle('open'); this.textContent = this.textContent.includes('Vezi')?'Ascunde detalii':'Vezi fișa completă →'">Vezi fișa completă →</button>
+    <button class="toggle-btn" type="button" aria-expanded="false">Vezi fișa completă →</button>
     <div class="details">
       ${architectsBlock ? `<h4>Arhitecți</h4><div class="stamps">${architectsBlock}</div>` : ''}
       ${s.services?.length?`<h4>Servicii oferite</h4><p>${s.services.join(' · ')}</p>`:''}
@@ -2252,57 +2376,263 @@ function renderStats(){
   document.getElementById('pagecount').textContent = '01–100 / 171';
 }
 
-/* orașe pentru filtrare rapidă — potrivire pe substring în câmpul location */
-const CITY_TAGS = ['București','Cluj-Napoca','Timișoara','Constanța','Brașov','Sibiu','Oradea','Craiova','Iași','Ploiești','Arad','Târgu Mureș'];
-let currentCity = '';
-const cityCount = c => DATA.filter(d => (d.location||'').toLowerCase().includes(c.toLowerCase())).length;
+/* ============ SEARCH / FACET ENGINE ============ */
+const FOLD_MAP={'ă':'a','â':'a','î':'i','ș':'s','ş':'s','ț':'t','ţ':'t'};
+function fold(s){ let o=''; for(const ch of String(s==null?'':s).toLowerCase()) o+=FOLD_MAP[ch]||ch; return o; }
 
-function renderCityChips(){
-  const bar = document.getElementById('citybar');
-  const cities = CITY_TAGS.map(c=>({c, n:cityCount(c)})).filter(x=>x.n>=2).sort((a,b)=>b.n-a.n);
-  bar.innerHTML = '<span class="cchip-label">Oraș</span>' +
-    cities.map(x=>`<button class="cchip${currentCity===x.c?' active':''}" data-city="${x.c}">${x.c} <span class="n">${x.n}</span></button>`).join('');
-  bar.querySelectorAll('.cchip').forEach(chip=>{
-    chip.addEventListener('click', ()=>{
-      currentCity = (currentCity === chip.dataset.city) ? '' : chip.dataset.city;
-      renderCityChips();
-      renderGrid(currentFilter, document.getElementById('search').value);
-    });
-  });
+const CAT_RULES=[
+  {slug:'restaurare', label:'Restaurare / patrimoniu', rx:/restaurare|reabilitare|consolidare|monument|conservare|patrimoniu/},
+  {slug:'reconversie', label:'Reconversie', rx:/reconvers|conversie|refunctionalizare|reconvertire|adaptive/},
+  {slug:'locuinta', label:'Locuință individuală', rx:/locuinta individuala|locuinta unifamiliala|\brezidential\b|\bcasa\b|\bcase\b|\bvila\b|\bvile\b|locuinte cuplate|casa de vacanta|arhetip|renovare \+ extindere locuinta|maximalism|periscop|locuire/},
+  {slug:'colective', label:'Locuințe colective', rx:/colectiv|ansamblu|apartament|imobil de locuinte|semicolectiv|locuire colectiva|bloc-boutique|locuinte colective/},
+  {slug:'birouri', label:'Birouri', rx:/\bbirouri\b|cladiri de birouri|office/},
+  {slug:'public', label:'Public / civic', rx:/\bpublic|civic|primaria|judecatorie|justitie|piateta|administrativ|spatiu public|infrastructura pietonala|regenerare stradala|mobilitate urbana|hub de mobilitate/},
+  {slug:'cultural', label:'Cultural', rx:/muzeu|teatru|cultural|biblioteca|galerie|pavilion/},
+  {slug:'hotelier', label:'Hotel / turism', rx:/hotel|pensiune|resort|aparthotel|turism|ospitalitate|cazare|hostel|horeca/},
+  {slug:'sacru', label:'Arhitectură sacră', rx:/sacr|biseric|capel|manastire|religios|clopotnita|incinta fortificata/},
+  {slug:'urban', label:'Urbanism / peisaj', rx:/urban|masterplan|regenerare|mobilitate|peisaj|peisager|peisagistic|\bparc\b|front de apa|amenajare spatiu public|gradina/},
+  {slug:'interior', label:'Design interior', rx:/design interior|amenajare|scenografie|interioar|mobilare|concept vizual|retail/},
+  {slug:'educational', label:'Educațional', rx:/scoala|gradinita|educational|liceu|universitate|campus/},
+  {slug:'sport', label:'Sport / loisir', rx:/stadion|\bsport\b|loisir|arena/},
+  {slug:'sanatate', label:'Sănătate', rx:/sanatate|clinica|spital|radioterapie|medical/},
+];
+const CAT_LABEL=Object.fromEntries(CAT_RULES.map(r=>[r.slug,r.label]));
+const AWARD_RX=/anuala|\bbna\b|bienala nationala|mies van der rohe|europa nostra|\bagir\b/;
+const CITY_CANON=['București','Cluj-Napoca','Timișoara','Constanța','Brașov','Sibiu','Oradea','Craiova','Iași','Ploiești','Arad','Târgu Mureș'];
+
+DATA.forEach(d=>{
+  const ptHay=fold((d.projectTypes||[]).join(' · '));
+  d._cats=CAT_RULES.filter(r=>r.rx.test(ptHay)).map(r=>r.slug);
+  const locF=fold(d.location||'');
+  d._cities=CITY_CANON.filter(c=>locF.includes(fold(c)));
+  d._national=locF.includes('national');
+  d._verified=(d.architects||[]).some(a=>a.verified===true);
+  d._projectCount=(d.notable||[]).length;
+  d._hasAward=AWARD_RX.test(fold((d.notable||[]).join(' · ')+' · '+(d.foundedNote||'')));
+  d._blob=fold([
+    d.name,d.subtitle,d.location,d.blurb,d.sourceTitle,
+    (d.architects||[]).map(a=>a.name+' '+(a.tna||'')+' '+(a.note||'')).join(' '),
+    (d.services||[]).join(' '),(d.projectTypes||[]).join(' '),(d.notable||[]).join(' '),
+    d._cats.map(s=>CAT_LABEL[s]).join(' ')
+  ].filter(Boolean).join(' · '));
+});
+
+const CITY_OPTS=CITY_CANON.filter(c=>DATA.filter(d=>d._cities.includes(c)).length>=2);
+const HAS_NATIONAL=DATA.some(d=>d._national);
+const HAS_OTHER=DATA.some(d=>d._cities.length===0 && !d._national);
+const CAT_OPTS=CAT_RULES.map(r=>r.slug).filter(s=>DATA.some(d=>d._cats.includes(s)));
+
+const state={q:'',cats:new Set(),cities:new Set(),verified:false,awards:false,sort:'rel'};
+
+function readURL(){
+  const p=new URLSearchParams(location.search);
+  state.q=p.get('q')||'';
+  state.cats=new Set((p.get('cat')||'').split(',').filter(Boolean));
+  state.cities=new Set((p.get('oras')||'').split(',').filter(Boolean));
+  state.verified=p.get('oar')==='1';
+  state.awards=p.get('dist')==='1';
+  state.sort=p.get('sort')||'rel';
+}
+function writeURL(){
+  const p=new URLSearchParams();
+  if(state.q) p.set('q',state.q);
+  if(state.cats.size) p.set('cat',[...state.cats].join(','));
+  if(state.cities.size) p.set('oras',[...state.cities].join(','));
+  if(state.verified) p.set('oar','1');
+  if(state.awards) p.set('dist','1');
+  if(state.sort!=='rel') p.set('sort',state.sort);
+  const qs=p.toString();
+  history.replaceState(null,'',qs?('?'+qs):location.pathname);
 }
 
-function renderGrid(filter='all', query=''){
-  const grid = document.getElementById('grid');
-  let items = DATA;
-  if(filter==='ro') items = items.filter(d=>d.country==='ro');
-  if(filter==='intl') items = items.filter(d=>d.country==='intl');
-  if(filter==='verified') items = items.filter(d=>(d.architects||[]).some(a=>a.verified));
-  if(currentCity) items = items.filter(d=> (d.location||'').toLowerCase().includes(currentCity.toLowerCase()));
-  if(query){
-    const q = query.toLowerCase();
-    items = items.filter(d=> (d.name+' '+(d.subtitle||'')+' '+(d.location||'')+' '+(d.architects||[]).map(a=>a.name).join(' ')+' '+(d.notable||[]).join(' ')).toLowerCase().includes(q));
+const qtokens=()=>fold(state.q).split(/\s+/).filter(Boolean);
+function matchText(d){ return qtokens().every(t=>d._blob.includes(t)); }
+function matchFacets(d,skip){
+  if(skip!=='cats' && state.cats.size && !d._cats.some(c=>state.cats.has(c))) return false;
+  if(skip!=='cities' && state.cities.size){
+    let hit=d._cities.some(c=>state.cities.has(c));
+    if(!hit && state.cities.has('national') && d._national) hit=true;
+    if(!hit && state.cities.has('_other') && d._cities.length===0 && !d._national) hit=true;
+    if(!hit) return false;
   }
-  grid.innerHTML = items.map(card).join('');
-  document.getElementById('grid-count').textContent = items.length + ' rezultate';
-  document.getElementById('empty-msg').style.display = items.length ? 'none' : 'block';
+  if(skip!=='verified' && state.verified && !d._verified) return false;
+  if(skip!=='awards' && state.awards && !d._hasAward) return false;
+  return true;
+}
+const filteredList=()=>DATA.filter(d=>matchText(d)&&matchFacets(d));
+
+function catCount(slug){ return DATA.filter(d=>matchText(d)&&matchFacets(d,'cats')&&d._cats.includes(slug)).length; }
+function cityCount(key){
+  return DATA.filter(d=>{
+    if(!(matchText(d)&&matchFacets(d,'cities'))) return false;
+    if(key==='national') return d._national;
+    if(key==='_other') return d._cities.length===0 && !d._national;
+    return d._cities.includes(key);
+  }).length;
+}
+function toggleCount(kind){
+  return DATA.filter(d=>matchText(d)&&matchFacets(d,kind)&&(kind==='verified'?d._verified:d._hasAward)).length;
 }
 
-let currentFilter='all';
-document.querySelectorAll('.chip').forEach(chip=>{
-  chip.addEventListener('click', ()=>{
-    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
-    chip.classList.add('active');
-    currentFilter = chip.dataset.filter;
-    renderGrid(currentFilter, document.getElementById('search').value);
+function relScore(d){
+  const tk=qtokens(); let s=0;
+  const nf=fold(d.name);
+  tk.forEach(t=>{
+    if(nf===t) s+=120; else if(nf.startsWith(t)) s+=45; else if(nf.includes(t)) s+=22;
+    if(fold((d.architects||[]).map(a=>a.name).join(' ')).includes(t)) s+=9;
+    if(d._cities.some(c=>fold(c).includes(t))) s+=7;
   });
+  return s+Math.min(d._projectCount,6);
+}
+function sortList(list){
+  const arr=list.slice(), by=state.sort;
+  const az=(a,b)=>a.name.localeCompare(b.name,'ro');
+  if(by==='az') arr.sort(az);
+  else if(by==='city') arr.sort((a,b)=>(a._cities[0]||'￿').localeCompare(b._cities[0]||'￿','ro')||az(a,b));
+  else if(by==='projects') arr.sort((a,b)=>b._projectCount-a._projectCount||az(a,b));
+  else if(by==='verified') arr.sort((a,b)=>(b._verified?1:0)-(a._verified?1:0)||az(a,b));
+  else if(qtokens().length) arr.sort((a,b)=>relScore(b)-relScore(a)||az(a,b));
+  else arr.sort((a,b)=>(a.country==='ro'?0:1)-(b.country==='ro'?0:1)||b._projectCount-a._projectCount||az(a,b));
+  return arr;
+}
+
+function hi(text,tk){
+  const f=fold(text); const R=[];
+  tk.forEach(t=>{ let i=0; while((i=f.indexOf(t,i))!==-1){ R.push([i,i+t.length]); i+=t.length; } });
+  if(!R.length) return text;
+  R.sort((a,b)=>a[0]-b[0]);
+  const M=[R[0].slice()];
+  for(let k=1;k<R.length;k++){ const L=M[M.length-1]; if(R[k][0]<=L[1]) L[1]=Math.max(L[1],R[k][1]); else M.push(R[k].slice()); }
+  let out='',pos=0;
+  M.forEach(([a,b])=>{ out+=text.slice(pos,a)+'<mark>'+text.slice(a,b)+'</mark>'; pos=b; });
+  return out+text.slice(pos);
+}
+
+/* ---- DOM ---- */
+const cardEls=new Map();
+function buildCards(){
+  DATA.forEach(d=>{
+    const w=document.createElement('div');
+    w.innerHTML=card(d);
+    cardEls.set(d.id,w.firstElementChild);
+  });
+}
+function updateCard(el,d,tk){
+  el.querySelector('h3').innerHTML = tk.length ? hi(d.name,tk) : d.name;
+  const slot=el.querySelector('.match');
+  if(!tk.length){ slot.hidden=true; slot.textContent=''; return; }
+  const nameF=fold(d.name), locF=fold(d.location||'');
+  const headCovers=tk.every(t=>nameF.includes(t)||locF.includes(t));
+  let best='',score=0;
+  (d.notable||[]).forEach(n=>{ const nf=fold(n); const sc=tk.reduce((a,t)=>a+(nf.includes(t)?1:0),0); if(sc>score){ score=sc; best=n; } });
+  if(best && score>0 && !headCovers){ slot.innerHTML='↳ '+hi(best,tk); slot.hidden=false; }
+  else { slot.hidden=true; slot.textContent=''; }
+}
+function render(){
+  const list=sortList(filteredList());
+  const tk=qtokens();
+  const grid=document.getElementById('grid');
+  grid.replaceChildren(...list.map(d=>{ const el=cardEls.get(d.id); updateCard(el,d,tk); return el; }));
+  document.getElementById('empty-msg').hidden=list.length>0;
+  const total=DATA.length;
+  document.getElementById('grid-count').textContent=list.length===total?(total+' studiouri'):(list.length+' din '+total);
+  renderActiveBar(); renderFacets();
+  document.getElementById('sort').value=state.sort;
+  writeURL();
+}
+
+function renderFacets(){
+  const opt=(fk,val,label,n,checked)=>{
+    const dis=n===0&&!checked;
+    return `<label class="facet-opt${dis?' disabled':''}"><input type="checkbox" data-fk="${fk}" value="${val}"${checked?' checked':''}${dis?' disabled':''}><span>${label}</span><span class="fcount">${n}</span></label>`;
+  };
+  let h='<div class="facet-group"><h3>Tip de proiect</h3>';
+  CAT_OPTS.forEach(s=>{ h+=opt('cat',s,CAT_LABEL[s],catCount(s),state.cats.has(s)); });
+  h+='</div><div class="facet-group"><h3>Oraș</h3>';
+  CITY_OPTS.forEach(c=>{ h+=opt('oras',c,c,cityCount(c),state.cities.has(c)); });
+  if(HAS_OTHER) h+=opt('oras','_other','Alt oraș / județ',cityCount('_other'),state.cities.has('_other'));
+  if(HAS_NATIONAL) h+=opt('oras','national','Național / mai multe',cityCount('national'),state.cities.has('national'));
+  h+='</div><div class="facet-group"><h3>Alte filtre</h3>';
+  h+=`<label class="facet-opt"><input type="checkbox" data-fk="oar"${state.verified?' checked':''}><span>Cu arhitect verificat OAR</span><span class="fcount">${toggleCount('verified')}</span></label>`;
+  h+=`<label class="facet-opt"><input type="checkbox" data-fk="dist"${state.awards?' checked':''}><span>Cu distincții (Anuala, BNA, Mies…)</span><span class="fcount">${toggleCount('awards')}</span></label>`;
+  h+='</div>';
+  document.getElementById('facetbody').innerHTML=h;
+  const active=state.cats.size+state.cities.size+(state.verified?1:0)+(state.awards?1:0);
+  const badge=document.getElementById('filterbadge');
+  badge.textContent=active; badge.hidden=active===0;
+  document.getElementById('facetapply').textContent='Arată '+filteredList().length+' rezultate';
+}
+
+function renderActiveBar(){
+  const cityLbl=v=>v==='national'?'Național':v==='_other'?'Alt oraș':v;
+  const chip=(fk,val,label)=>`<span class="achip">${label}<button data-fk="${fk}" data-val="${val}" aria-label="Elimină ${label}">✕</button></span>`;
+  const c=[];
+  state.cats.forEach(s=>c.push(chip('cat',s,CAT_LABEL[s])));
+  state.cities.forEach(v=>c.push(chip('oras',v,cityLbl(v))));
+  if(state.verified) c.push(chip('oar','','Verificat OAR'));
+  if(state.awards) c.push(chip('dist','','Cu distincții'));
+  if(c.length) c.push('<button class="achip clear" data-fk="all">Șterge tot</button>');
+  document.getElementById('activebar').innerHTML=c.join('');
+}
+
+const toggleSet=(set,v,on)=>{ on?set.add(v):set.delete(v); };
+
+/* ---- events ---- */
+document.getElementById('facetbody').addEventListener('change',e=>{
+  const i=e.target.closest('input'); if(!i) return;
+  const fk=i.dataset.fk;
+  if(fk==='cat') toggleSet(state.cats,i.value,i.checked);
+  else if(fk==='oras') toggleSet(state.cities,i.value,i.checked);
+  else if(fk==='oar') state.verified=i.checked;
+  else if(fk==='dist') state.awards=i.checked;
+  render();
 });
-document.getElementById('search').addEventListener('input', e=>{
-  renderGrid(currentFilter, e.target.value);
+document.getElementById('activebar').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const fk=b.dataset.fk;
+  if(fk==='all'){ state.cats.clear(); state.cities.clear(); state.verified=false; state.awards=false; }
+  else if(fk==='cat') state.cats.delete(b.dataset.val);
+  else if(fk==='oras') state.cities.delete(b.dataset.val);
+  else if(fk==='oar') state.verified=false;
+  else if(fk==='dist') state.awards=false;
+  render();
+});
+const searchEl=document.getElementById('search');
+let deb;
+searchEl.addEventListener('input',e=>{ clearTimeout(deb); const v=e.target.value; deb=setTimeout(()=>{ state.q=v; render(); },110); });
+searchEl.addEventListener('keydown',e=>{ if(e.key==='Escape'){ e.target.value=''; state.q=''; render(); } });
+document.addEventListener('keydown',e=>{
+  const t=(document.activeElement||{}).tagName||'';
+  if(e.key==='/' && !/^(INPUT|TEXTAREA|SELECT)$/.test(t)){ e.preventDefault(); searchEl.focus(); }
+});
+document.getElementById('sort').addEventListener('change',e=>{ state.sort=e.target.value; render(); });
+
+document.getElementById('grid').addEventListener('click',e=>{
+  const btn=e.target.closest('.toggle-btn'); if(!btn) return;
+  const det=btn.nextElementSibling;
+  const open=det.classList.toggle('open');
+  btn.textContent=open?'Ascunde detalii':'Vezi fișa completă →';
+  btn.setAttribute('aria-expanded',open);
+  if(open && window.matchMedia('(max-width:860px)').matches) btn.closest('.card').scrollIntoView({block:'nearest',behavior:'smooth'});
 });
 
+const facetsEl=document.getElementById('facets'), fbtn=document.getElementById('filterbtn');
+const openDrawer=()=>{ facetsEl.classList.add('open'); fbtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; };
+const closeDrawer=()=>{ facetsEl.classList.remove('open'); fbtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; };
+fbtn.addEventListener('click',openDrawer);
+document.getElementById('facetclose').addEventListener('click',closeDrawer);
+document.getElementById('facetapply').addEventListener('click',closeDrawer);
+document.getElementById('clearall').addEventListener('click',()=>{
+  state.q=''; searchEl.value=''; state.cats.clear(); state.cities.clear(); state.verified=false; state.awards=false; render();
+});
+window.addEventListener('popstate',()=>{ readURL(); searchEl.value=state.q; render(); });
+
+/* ---- init ---- */
 renderStats();
-renderCityChips();
-renderGrid();
+buildCards();
+readURL();
+searchEl.value=state.q;
+render();
 </script>
 </body>
 </html>
