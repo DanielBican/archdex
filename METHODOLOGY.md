@@ -6,11 +6,12 @@ Toate datele sunt în `index.html`, în array-ul JavaScript `DATA`.
 
 ## Stadiu curent
 
-- **Pagini parcurse:** 1–85 din 171 (la nivel de titlu, integral).
-- **~230 de articole** deschise integral pentru extragerea creditelor de arhitectură.
-- **115 studiouri** în registru: 108 românești + 7 internaționale.
+- **Pagini parcurse:** 1–100 din 171 (la nivel de titlu, integral).
+- **~290 de articole** deschise integral pentru extragerea creditelor de arhitectură.
+- **121 studiouri** în registru: 114 românești + 7 internaționale.
 - Verificare OAR București făcută pe literele: A, B, C, D, G, K, L, M, N, P, R, S, Ș, W, Z.
-- Rundă nouă începe cu **pagina 86**.
+- Rundă nouă începe cu **pagina 101**.
+- **Notă:** sub ~pagina 90 (arhivă igloo 2014–2016), majoritatea articolelor NU publică creditele de arhitectură (doar text + fotograf), deci randamentul de studiouri noi scade brusc. Multe proiecte notabile rămân neatribuibile (ex. Casa Alexandrina, Rasova, Château Jidvei, Conacul Manasia).
 
 ## Pași, pentru fiecare pagină de categorie
 
@@ -54,7 +55,7 @@ Interviuri / profiluri / eseuri fără proiect construit cu adresă:
 
 ## Cum se extinde
 
-- Rundă nouă începând cu **pagina 86 din 171**.
+- Rundă nouă începând cu **pagina 101 din 171**.
 - Fiecare studio nou = obiect în `DATA` din `index.html`.
 - Verificarea OAR se face pe tablourile teritoriale publice (București sau alte filiale județene).
 

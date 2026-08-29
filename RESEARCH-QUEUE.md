@@ -5,10 +5,8 @@ Studiouri apărute în volumele tipărite *Case din România* și *Interioare. B
 Când un studio de aici intră în `DATA` (`index.html`), se șterge din această listă.
 
 - [ ] Nuca Studio
-- [ ] Square One
 - [ ] Eliodor Streza
 - [ ] Cardo Plan
-- [ ] AA Studio
 - [ ] Horia Reit
 - [ ] Theo Stancu
 - [ ] RUAA
