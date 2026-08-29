@@ -246,16 +246,6 @@
   .stamp-name b{display:block;font-size:.78rem;color:var(--ink);}
   .unverified-note{font-size:.72rem;color:var(--ink-soft);font-style:italic;}
 
-  /* bonus index */
-  .bonuslist{
-    columns:3 220px;
-    gap:1.4rem;
-    font-size:.86rem;
-    color:var(--ink-2);
-  }
-  .bonuslist li{margin-bottom:.3rem;break-inside:avoid;}
-  @media (max-width:640px){.bonuslist{columns:1;}}
-
   footer{
     background:var(--ink);
     color:#C9CFDA;
@@ -263,16 +253,9 @@
     font-size:.85rem;
   }
   footer .inner{max-width:1180px;margin:0 auto;}
-  footer h4{
-    font-family:'Fraunces',serif;
-    color:var(--cream);
-    font-size:1.05rem;
-    margin:0 0 .5rem;
-  }
-  footer .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-bottom:2rem;}
-  footer ul{margin:0;padding-left:1.1rem;}
-  footer li{margin-bottom:.35rem;}
-  footer .fine{border-top:1px solid rgba(243,241,231,0.15);padding-top:1.2rem;color:#8B96A8;font-size:.78rem;font-family:'IBM Plex Mono',monospace;}
+  footer p{margin:0 0 .8rem;max-width:75ch;}
+  footer a{color:#D9CBAE;}
+  footer .fine{border-top:1px solid rgba(243,241,231,0.15);padding-top:1.2rem;margin-top:.4rem;color:#8B96A8;font-size:.78rem;font-family:'IBM Plex Mono',monospace;max-width:75ch;}
 
   .empty{padding:2rem 0;color:var(--ink-soft);font-style:italic;}
 
@@ -314,48 +297,21 @@
   <div class="section-label"><span id="grid-label">Studiouri</span><span id="grid-count"></span></div>
   <div class="grid" id="grid"></div>
   <p class="empty" id="empty-msg" style="display:none;">Niciun rezultat pentru această căutare.</p>
-
-  <div class="section-label"><span>Index rapid — de verificat în continuare</span><span>din albumele igloobest</span></div>
-  <p style="font-size:.88rem;color:var(--ink-2);max-width:70ch;">
-    Aceste studiouri au apărut în volumele tipărite <em>Case din România</em> și <em>Interioare. Birouri de arhitectură 2025</em>
-    (colecția igloobest), nu în articolele online încă parcurse. Le păstrez aici ca listă de plecare pentru următoarea rundă de cercetare —
-    nu au fost încă verificate în Tabloul OAR și nu au profil complet.
-  </p>
-  <ul class="bonuslist" id="bonuslist"></ul>
 </main>
 
 <footer>
   <div class="inner">
-    <div class="cols">
-      <div>
-        <h4>Metodologie</h4>
-        <ul>
-          <li>60 pagini din categoria Arhitectură parcurse integral la nivel de titlu (pag. 1–60 din 171)</li>
-          <li>~155 articole deschise integral pentru extragerea creditelor de arhitectură</li>
-          <li>Cazuri semnalate ca „neclare" și excluse din listă: interviuri/profiluri fără proiect construit cu adresă (ex: Atelier TERRApia; interviuri Ilinca Păun Constantinescu, Adrian Phiffer, Oana Stănescu, Ștefan Davidovici, Anda Ștefan, Raluca Șoaita, Iulia Stanciu, Bogdan Anghel, VATRAA, iungo studio; studiourile de vizualizare bucharest.studio și Panoptikon; reactivarea culturală a Așezămintelor Ion I. C. Brătianu de către ARCEN; pavilionul BIT.BIO.BOT de la Bienala de la Veneția 2021 — fără proiect construit cu adresă) și dosarele/eseurile tematice igloo (ex: „Dosar #210 — Pe Topolog, în sus"; „Craiova pe la 1900" analizat separat — s-a păstrat doar acolo unde există echipă de proiectare nominalizată)</li>
-          <li>Din pagina 21 înainte: articolele clar internaționale (nume de țară/oraș străin în titlu) au fost sărite fără a fi deschise, pentru optimizare — la cererea explicită a utilizatorului. Paginile 44 și (aproape integral) 46, 47, 50, 56, 58 au fost internaționale.</li>
-          <li>Verificare directă în Tabloul Teritorial București al OAR (oar-bucuresti.ro/tabloul) pentru arhitecții români nominalizați — pe litere A, B, C, D, G, K, L, M, N, P, R, S, Ș, W, Z</li>
-          <li>Date de firmă căutate pe termene.ro / listafirme.eu — confirmate cu CUI doar unde denumirea a permis identificare certă</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Limitări</h4>
-        <ul>
-          <li>Studiourile din afara Bucureștiului pot fi înregistrate la alte filiale OAR, neverificate încă aici</li>
-          <li>Recenziile publice (Google/Facebook) sunt rare pentru birouri mici B2B — absența lor nu e neapărat un semnal negativ</li>
-          <li>Site static — pentru date noi, cere o rundă nouă de extragere și regenerează fișierul</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Cum extinzi</h4>
-        <ul>
-          <li>Cere o rundă nouă începând cu pagina 61 din 171</li>
-          <li>Fiecare studio nou se adaugă ca obiect în arraya <code class="mono">DATA</code> din acest fișier</li>
-          <li>Verificarea OAR se poate face pe tablourile teritoriale publice (bucurești, sau alte filiale județene)</li>
-        </ul>
-      </div>
+    <p>Registru construit manual din <a href="https://igloo.ro/category/arhitectura/">categoria Arhitectură a revistei igloo.ro</a>, cu verificarea dreptului de semnătură în <a href="https://www.oar-bucuresti.ro/tabloul/">Tabloul Teritorial București al OAR</a>. Pagini parcurse: 1–60 din 171.</p>
+    <div class="fine">
+      Metodologie completă, limitări și excluderi:
+      <a href="https://github.com/DanielBican/archdex/blob/main/METHODOLOGY.md">METHODOLOGY.md</a> ·
+      studiouri de verificat în continuare:
+      <a href="https://github.com/DanielBican/archdex/blob/main/RESEARCH-QUEUE.md">RESEARCH-QUEUE.md</a> ·
+      cod sursă:
+      <a href="https://github.com/DanielBican/archdex">github.com/DanielBican/archdex</a>
+      <br><br>
+      Compilat din igloo.ro (articole citate în fiecare fișă) · oar-bucuresti.ro/tabloul · termene.ro / listafirme.eu · anuala.ro · site-urile proprii ale studiourilor. Document de cercetare personală — nu constituie recomandare profesională sau juridică.
     </div>
-    <div class="fine">Compilat din igloo.ro (articole citate în fiecare fișă) · oar-bucuresti.ro/tabloul · termene.ro / listafirme.eu · anuala.ro · site-urile proprii ale studiourilor. Document de cercetare personală — nu constituie recomandare profesională sau juridică.</div>
   </div>
 </footer>
 
@@ -1738,19 +1694,6 @@ const DATA = [
   },
 ];
 
-const BONUS = [
- "Nuca Studio","Square One","Eliodor Streza","Cardo Plan","AA Studio","Horia Reit",
- "Theo Stancu","RUAA","Bogdan Demetrescu",
- "Florian Stanciu","Mădălin Ghigeanu","Daniel Ciocăzanu","Tecon",
- "NBC Arhitect","DE3 Grup","Prographic Architecture Studio",
- "Centerpoint","OM Birou de Arhitectură",
- "Blipsz + Atelier FKM","Corina Dîndăreanu","Filofi și Trandafir Arhitectură","Prodid",
- "Outline Architecture Office",
- "Format Architecture & Design","Kub Planning",
- "Inegal Design","TIN.archi","planwerk (Cluj-Napoca)",
- "MKBT (urbanism social)","Andreea Marinescu Arhitectură"
-];
-
 /* ============ RENDER ============ */
 function stampSVG(a){
   const verified = a.verified === true;
@@ -1821,7 +1764,6 @@ function renderStats(){
     {n: DATA.length, l:'Studiouri în registru'},
     {n: ro.length, l:'Studiouri românești'},
     {n: verifiedArch, l:'Arhitecți verificați OAR'},
-    {n: BONUS.length, l:'În lista de verificat'},
     {n: 60, l:'Pagini categorie parcurse / 171'},
   ];
   document.getElementById('statsbar').innerHTML = stats.map(s=>`<div class="stat"><b>${s.n}</b><span>${s.l}</span></div>`).join('');
@@ -1843,10 +1785,6 @@ function renderGrid(filter='all', query=''){
   document.getElementById('empty-msg').style.display = items.length ? 'none' : 'block';
 }
 
-function renderBonus(){
-  document.getElementById('bonuslist').innerHTML = BONUS.map(b=>`<li>${b}</li>`).join('');
-}
-
 let currentFilter='all';
 document.querySelectorAll('.chip').forEach(chip=>{
   chip.addEventListener('click', ()=>{
@@ -1862,7 +1800,6 @@ document.getElementById('search').addEventListener('input', e=>{
 
 renderStats();
 renderGrid();
-renderBonus();
 </script>
 </body>
 </html>
