@@ -34,6 +34,7 @@ Toate datele sunt în `index.html`, în array-ul JavaScript `DATA`.
 - Studiourile din afara Bucureștiului pot fi înregistrate la alte filiale teritoriale OAR, neverificate încă aici.
 - Recenziile publice (Google/Facebook) sunt rare pentru birouri mici B2B — absența lor nu e neapărat un semnal negativ.
 - Site static, un singur fișier — pentru date noi se rulează o rundă nouă de extragere.
+- `website` completat pentru 86 din 121 de fișe (verificat prin căutare web, 08.2026). Cele 35 rămase cu „—" sunt birouri individuale, practici mici/mai vechi sau denumiri prea generice pentru a confirma un site din listările de directoare — lăsate explicit goale, nu omise.
 - Câteva intrări sunt fundații sau persoane fizice, nu birouri comerciale clasice (Pro Patrimonio, WeWilder, Jan Hülsemann, ABRAL) — marcate ca atare în notă.
 
 ## Excluderi (articole parcurse, dar neadăugate)
